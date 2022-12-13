@@ -42,4 +42,8 @@ GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 * ### Wireframes
 ![GPU Bytes](https://user-images.githubusercontent.com/102811792/207378032-64592473-f19a-41ca-a864-ac54cb5e1818.png)
 
+* ### Colors
+![Colors](https://user-images.githubusercontent.com/102811792/207381246-07f2d0ae-68bd-47bd-9667-a55d109cbedf.png)
+
+
 
