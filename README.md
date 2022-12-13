@@ -15,7 +15,7 @@ GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 
 1. As a **Site User** I can **view a list of GPU blog posts** so that **I can choose what GPU news and information to read**
 2. As a **Site User** I can **click on a GPU blog post** so that **I can see the selected GPU blog post text contents**
-3. As a **Site User** I can **sign up for an account** so that **I can like and comment on GPU blog posts**
+3. As a **Site User** I can **sign up for an account** so that **I can like and comment on GPU blog posts, NVIDIA cards and AMD cards**
 4. As a **Site User** I can **navigate to the NVIDIA page** so that **I can view a list of NVIDIA graphics cards**
 5. As a **Site User** I can **click on an NVIDIA graphics card** so that **I can see detailed information about that card**
 6. As a **Site User** I can **navigate to the AMD page** so that **I can view a list of AMD graphics cards**
