@@ -36,3 +36,10 @@ GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 21. As a **Site Admin** I can **create, read, update and delete posts** so that **I can manage blog content on the home, NVIDIA and AMD pages**
 22. As a **Site Admin** I can **approve or disapprove comments** so that **I can filter out objectionable comments**
 23. As a **Site Admin** I can **create draft posts** so that **I can finish writing the content later**
+
+## Design
+
+* ### Wireframes
+![GPU Bytes](https://user-images.githubusercontent.com/102811792/207378032-64592473-f19a-41ca-a864-ac54cb5e1818.png)
+
+
