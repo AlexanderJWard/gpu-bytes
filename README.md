@@ -36,6 +36,7 @@ GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 21. As a **Site Admin** I can **create, read, update and delete posts** so that **I can manage blog content on the home, NVIDIA and AMD pages**
 22. As a **Site Admin** I can **approve or disapprove comments** so that **I can filter out objectionable comments**
 23. As a **Site Admin** I can **create draft posts** so that **I can finish writing the content later**
+24. As a **Site User** I can **view a paginated list of posts** so that **posts are easily viewed**
 
 ## Design
 
