@@ -46,5 +46,26 @@ GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 * ### Colors
 ![Colors](https://user-images.githubusercontent.com/102811792/207381246-07f2d0ae-68bd-47bd-9667-a55d109cbedf.png)
 
+## Data Models
+
+* ### Blog Post
+
+- [ ] Create - Admin Users can create new blog posts
+- [x] Read - Site Users can view blog posts 
+- [ ] Update - Admin Users can update blog posts
+- [ ] Delete - Admin Users can delete blog posts
+
+| Key          | Name           | Type             |
+|--------------|----------------|------------------|
+|              | Title          | CharField[200]   |
+| ForeignKey   | Author         | User Model       |
+|              | Created Date   | DateTime         |
+|              | Updated Date   | DateTime         |
+|              | Content        | TextField        |
+|              | Featured Image | Cloudinary Image |
+|              | Excerpt        | TextField        |
+| Many to Many | Likes          | User Model       |
+|              | Slug (unique)  | SlugField        |
+|              | Status         | Integer          |
 
 
