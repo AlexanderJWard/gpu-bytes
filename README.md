@@ -68,4 +68,20 @@ GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 |              | Slug (unique)  | SlugField        |
 |              | Status         | Integer          |
 
+* ### Comment
+
+- [x] Create - Registered Users can create a new comment
+- [x] Read - Site Users can view all comments
+- [x] Update - Registered Users can update a comment they created
+- [x] Delete - Registered Users can delete a comment they created
+
+| Key          | Name           | Type             |
+|--------------|----------------|------------------|
+| ForeignKey   | Post           | Post Model       |
+|              | Name           | CharField[80]    |
+|              | Email          | EmailField       |
+|              | Body           | TextField        |
+|              | Created On     | DateTimeField    |
+|              | Approved       | BooleanField     |
+
 
