@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Source+Sans+Pro:wght@400&display=swap');
+
+/* fonts */
+
+.sourcesanspro-400 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+}
+
+.quicksand-400 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+}
+
+.fs-30 {
+    font-size: 30px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+/* background colors */
+
+.darkblue-bg {
+    background-color: #0068b5
+}
+
+.lightblue-bg {
+    background-color: #00a3f6;
+}
+
+.green-bg {
+    background-color: #76b900;
+}
+
+.red-bg {
+    background-color: #bd0000;
+}
+
+.ghostwhite-bg {
+    background-color: #fafaff;
+}
+
+/* text colors */
+
+.darkblue-tx {
+    color: #0068b5
+}
+
+.ghostwhite-tx {
+    color: #fafaff;
+}
+
+.gray-tx {
+    color: #777777;
+}
+
+.red-tx {
+    color: #bd0000;;
+}
+
+/* navigation bar */
+
+.navbar {
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: #777777;
+    padding-left: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar-brand:hover {
+    color: #bd0000;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(45deg);
+}
+
+.nav-item {
+    letter-spacing: 1px;
+    padding: 0 10px;
+}
+
+.nav-link {
+    color: #777777;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #bd0000;
+}
+
+.navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+    border-bottom: none;
+}
+
+.nav-item:first-child .nav-link {
+    padding-left: 30px;
+}
+
+.active {
+    color: #000;
+    font-weight: bold;
+}
+
+/* blog post card */
+
+.image-container img {
+    border: 2px solid #777777;
+    border-radius: .90rem;
+}
+
+.card {
+    border: 2px solid #777777;
+    border-radius: .90rem;
+}
+
+.card-title {
+    color: #000;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.post-link:hover {
+    text-decoration: none;
+}
+
+.card-text {
+    color: #000;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+    
+
+@media screen and (max-width: 1000px) {
+
+    .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
+        border-bottom: 1px solid #777777;
+    }
+
+    .nav-item:first-child .nav-link {
+        padding-left: 0px;
+    }
+
+}
