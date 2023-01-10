@@ -15,9 +15,9 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
                                 {% load static %}
-                                <img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %}">
+                                <a href="#"><img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %}"></a>
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                <a href="#"><img class="card-img-top" src=" {{ post.featured_image.url }}"></a>
                                 {% endif %}
                             </div>
                             <a href="#" class="post-link">
@@ -54,3 +54,5 @@
     {% endif %}
 </div>
 {%endblock%}
+
+<!-- Photo by Sergei Starostin: https://www.pexels.com/photo/graphics-card-in-close-up-photography-6704945/ -->
