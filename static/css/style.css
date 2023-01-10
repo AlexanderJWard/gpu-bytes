@@ -67,7 +67,7 @@
 }
 
 .navbar-brand {
-    color: #777777;
+    color: #000;
     padding-left: 10px;
     font-family: 'Quicksand', sans-serif;
     font-size: 30px;
@@ -120,7 +120,7 @@
 }
 
 .card {
-    border: 2px solid #777777;
+    border: none;
     border-radius: .90rem;
 }
 
@@ -129,8 +129,25 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+.card-parent:not(:last-child) {
+    border-right: 1px solid #77777725;
+}
+
+.card-parent {
+    border-top: 1px solid #77777725;
+}
+
+.card-parent:hover,
+.card-parent:hover .card-body {
+    background-color: rgba(133, 154, 174, 0.3);
+}
+
 .post-link:hover {
     text-decoration: none;
+}
+
+.post-link:hover * {
+    color: #bd0000;
 }
 
 .card-text {
