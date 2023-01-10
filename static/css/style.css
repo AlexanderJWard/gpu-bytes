@@ -227,3 +227,11 @@ body {
     }
 
 }
+
+@media screen and (max-width: 768px) {
+
+    .card-parent:not(:last-child) {
+        border-bottom: 1px solid #77777725;
+    }
+
+}
