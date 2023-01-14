@@ -91,6 +91,11 @@ class NVIDIAList(generic.ListView):
     paginate_by = 12
 
 
+class GPUDetail(View):
+    model = GPU
+    template_name = "gpu_detail.html"
+
+
 def AddGPU(request):
 
     if request.POST:

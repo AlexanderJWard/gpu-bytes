@@ -32,29 +32,12 @@ class Post(models.Model):
         return self.likes.count()
 
 
-
-
-class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=80)
-    email = models.TextField()
-    body = models.TextField()
-    brand = models.IntegerField(choices=GPU_BRAND, default=2)
-    created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
-
-    class Meta:
-        ordering = ['created_on']
-
-    def __str__(self):
-        return f"Comment {self.body} by {self.name}"
-
 class GPU(models.Model):
     name = models.CharField(max_length=200, unique=True)
     brand = models.IntegerField(choices=ADD_GPU_BRAND, default=0)
     slug = models.SlugField(max_length=200, unique=True)
     image = CloudinaryField('image', default='placeholder')
-    content = models.TextField(blank=False)
+    content = models.TextField()
     specs = models.TextField(blank=True)
     date_released = models.DateField(default=date.today)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -77,3 +60,20 @@ class GPU(models.Model):
         return super().save(*args, **kwargs)
 
     # https://www.benchatronics.com/detail/how-to-use-slug-and-populate-slug-outsude-django-admin
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    name = models.CharField(max_length=80)
+    email = models.TextField()
+    body = models.TextField()
+    brand = models.IntegerField(choices=GPU_BRAND, default=2)
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
+

@@ -14,12 +14,12 @@
                             <div class="image-container">
                                 {% if "placeholder" in post.image.url %}
                                 {% load static %}
-                                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %}"></a>
+                                <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %}"></a>
                                 {% else %}
-                                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {{ post.image.url }}"></a>
+                                <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top" src=" {{ post.image.url }}"></a>
                                 {% endif %}
                             </div>
-                            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                            <a href="{% url 'gpu_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title mt-2">{{ post.name }}</h2>
                                 <p class="card-text">Brand: {{ post.brand }}</p>
                             </a>
