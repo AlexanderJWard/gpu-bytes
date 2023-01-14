@@ -49,12 +49,6 @@
                         <span class="text-secondary">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
-                    <div class="col-1">
-                        {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
-                            {{ total_comments }}</strong>
-                        {% endwith %}
-                    </div>
                 </div>
             </div>
         </div>
@@ -66,7 +60,11 @@
     </div>
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <h3>Comments:</h3>
+            {% if comments.count == 1 %}
+            <h3>{{ comments.count }} Comment:</h3>
+            {% else %}
+            <h3>{{ comments.count }} Comments:</h3>
+            {% endif %}
             <div class="card-body">
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">

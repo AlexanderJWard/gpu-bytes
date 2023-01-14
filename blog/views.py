@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from .models import Post
-from .forms import CommentForm
+from .models import Post, GPU
+from .forms import CommentForm, AddGPUForm
 from django.http import HttpResponseRedirect
 
 
@@ -75,3 +75,34 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class AMDList(generic.ListView):
+    model = GPU
+    queryset = GPU.objects.filter(brand=1).filter(status=1).order_by("-date_released")
+    template_name = "amd.html"
+    paginate_by = 12
+
+
+class NVIDIAList(generic.ListView):
+    model = GPU
+    queryset = GPU.objects.filter(brand=0).filter(status=1).order_by("-date_released")
+    template_name = "nvidia.html"
+    paginate_by = 12
+
+
+def AddGPU(request):
+
+    if request.POST:
+
+        add_gpu_form = AddGPUForm(request.POST, request.FILES)
+        if add_gpu_form.is_valid():
+            add_gpu_form.save()
+
+    return render(
+        request,
+        "add_gpu.html",
+        {
+            "add_gpu_form": AddGPUForm(),
+        }
+    )
