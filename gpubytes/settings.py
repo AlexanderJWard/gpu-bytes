@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 import dj_database_url
 from django.contrib.messages import constants as messages
+import cloudinary
+
 if os.path.isfile('env.py'):
     import env
 
@@ -166,11 +168,6 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dujsv2f79',
-    'API_KEY': os.environ.get('API_KEY'),
-    'API_SECRET': os.environ.get('API_SECRET'),
-}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
