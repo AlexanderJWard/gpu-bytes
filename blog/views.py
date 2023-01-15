@@ -92,8 +92,19 @@ class NVIDIAList(generic.ListView):
 
 
 class GPUDetail(View):
-    model = GPU
-    template_name = "gpu_detail.html"
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = GPU.objects.filter(status=1)
+        gpu = get_object_or_404(queryset, slug=slug)
+
+        return render(
+            request,
+            "gpu_detail.html",
+            {
+                "gpu": gpu,
+            }
+        )
+
 
 
 def AddGPU(request):
