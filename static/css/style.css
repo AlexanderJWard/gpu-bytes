@@ -64,6 +64,10 @@ body {
     background-color: #fafaff;
 }
 
+.gray-bg {
+    background-color: #777777;
+}
+
 /* text colors */
 
 .darkblue-tx {
@@ -159,7 +163,7 @@ body {
 .image-container img {
     border: 2px solid #777777;
     border-radius: .90rem;
-    background-color: #000;
+    background-color: #777777;
 }
 
 .card {
@@ -199,21 +203,21 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-.edit-btn {
-    color: #fafaff;
-    border-radius: 50%;
-    bottom: 1.5rem;
-    right: .5rem;
-    padding: .5rem;
-}
-
-.filter-btn a {
+.filter-btn a,
+.edit-btn a {
     text-decoration: none;
     color: #000;
     font-family: 'Quicksand', sans-serif;
 }
 
-.filter-btn a:hover {
+.edit-btn i {
+    background-color: transparent;
+    color: #000;
+}
+
+.filter-btn:hover a,
+.edit-btn:hover a,
+.edit-btn:hover i {
     color: #fafaff;
 }
 
@@ -279,16 +283,6 @@ body {
 
     .card-parent:not(:last-child) {
         border-bottom: 1px solid #77777725;
-    }
-
-    .edit-btn {
-        color: #fafaff;
-        border-radius: 50%;
-        bottom: 0;
-        right: 0;
-        margin-top: .5rem;
-        font-size: 30px;
-        padding: .8rem;
     }
 
 }

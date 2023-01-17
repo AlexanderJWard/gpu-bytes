@@ -4,6 +4,11 @@ from .models import Post, GPU
 from .forms import CommentForm, GPUForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+from django.contrib import messages
+from django.urls import reverse_lazy, reverse
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 
 class PostList(generic.ListView):
@@ -78,87 +83,100 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class GPUList(generic.ListView):
+class GPUList(ListView):
     model = GPU
-    queryset = GPU.objects.filter(status=1).order_by("brand","-date_released")
     template_name = "gpu.html"
     paginate_by = 8
+    queryset = GPU.objects.filter(status=1).order_by("brand","-date_released")
 
 
-class AMDList(generic.ListView):
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+class AdminGPUList(ListView):
+    model = GPU
+    template_name = "gpu.html"
+    paginate_by = 8
+    queryset = GPU.objects.order_by("brand","-date_released")
+    
+
+class AMDList(ListView):
     model = GPU
     queryset = GPU.objects.filter(brand=1).filter(status=1).order_by("-date_released")
     template_name = "gpu.html"
     paginate_by = 8
 
 
-class NVIDIAList(generic.ListView):
+class NVIDIAList(ListView):
     model = GPU
     queryset = GPU.objects.filter(brand=0).filter(status=1).order_by("-date_released")
     template_name = "gpu.html"
     paginate_by = 8
 
 
-class GPUDetail(View):
-
-    def get(self, request, slug, *args, **kwargs):
-        queryset = GPU.objects.filter(status=1)
-        gpu = get_object_or_404(queryset, slug=slug)
-
-        return render(
-            request,
-            "gpu_detail.html",
-            {
-                "gpu": gpu,
-            }
-        )
+class GPUDetail(DetailView):
+    model = GPU
+    template_name = "gpu_detail.html"
 
 
-def AddGPU(request):
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+class AddGPU(CreateView):
+    model = GPU
+    form_class = GPUForm
+    template_name = "add_gpu.html"
 
-    if request.POST:
-
-        gpu_form = GPUForm(request.POST, request.FILES)
-        if gpu_form.is_valid():
-            gpu_form.save()
-            return HttpResponseRedirect("/gpu/")
-
-    return render(
-        request,
-        "add_gpu.html",
-        {
-            "gpu_form": GPUForm(),
-        }
-    )
-
-
-def EditGPU(request, slug):
-
-    context ={}
- 
-    gpu = get_object_or_404(GPU, slug=slug)
- 
-    form = GPUForm(request.POST or None, instance = gpu)
-
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect("/gpu/")
-
-    context["form"] = form
- 
-    return render(request, "edit_gpu.html", context)
+    def get(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.warning(request, 'You do not have permission to do this.')
+            return HttpResponseRedirect('/')
+        return super().get(request, *args, **kwargs)
+    
+    def form_valid(self, form):
+        """
+        Upon success prompt the user with a message
+        """
+        messages.success(self.request, "GPU Sucessfully created.")
+        super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
+    
+    def get_success_url(self, **kwargs):
+        return reverse_lazy("gpu_detail", args=[str(self.object.slug)])
 
 
-def DeleteGPU(request, slug):
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+class UpdateGPU(UpdateView):
+    model = GPU
+    form_class = GPUForm
+    template_name = 'update_gpu.html'
 
-    context ={}
- 
-    gpu = get_object_or_404(GPU, slug=slug)
- 
- 
-    if request.method =="POST":
-        gpu.delete()
-        return HttpResponseRedirect("/gpu/")
- 
-    return render(request, "delete_gpu.html", context)
+    def get(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.warning(request, 'You do not have permission to do this.')
+            return HttpResponseRedirect('/')
+        return super().get(request, *args, **kwargs)
+    
+    def form_valid(self, form):
+        """
+        Upon success prompt the user with a message
+        """
+        messages.success(self.request, "GPU Sucessfully updated.")
+        super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
+    
+    def get_success_url(self, **kwargs):
+        return reverse_lazy("gpu_detail", args=[str(self.object.slug)])
+
+
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+class DeleteGPU(DeleteView):
+    model = GPU
+    template_name = 'delete_gpu.html'
+
+    def get(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.warning(request, 'You do not have permission to do this.')
+            return HttpResponseRedirect('/')
+        return super().get(request, *args, **kwargs)
+
+    def get_success_url(self):
+        messages.success(self.request, "GPU Sucessfully deleted.")
+        return reverse_lazy("gpu")
 
