@@ -9,7 +9,7 @@
 <div class="container-fluid">
 
     <form method="post" style="margin-top: 1.3em;" action="{% url 'add_gpu' %}" enctype="multipart/form-data">
-        {{ add_gpu_form | crispy }}
+        {{ gpu_form | crispy }}
         {% csrf_token %}
         <button type="submit" class="btn btn-lg">Submit</button>
     </form>

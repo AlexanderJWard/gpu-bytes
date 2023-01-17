@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from .models import Post, GPU
-from .forms import CommentForm, AddGPUForm
-from django.http import HttpResponseRedirect
+from .forms import CommentForm, GPUForm
+from django.http import HttpResponse, HttpResponseRedirect
+from django.template import loader
 
 
 class PostList(generic.ListView):
@@ -77,18 +78,25 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+class GPUList(generic.ListView):
+    model = GPU
+    queryset = GPU.objects.filter(status=1).order_by("brand","-date_released")
+    template_name = "gpu.html"
+    paginate_by = 8
+
+
 class AMDList(generic.ListView):
     model = GPU
     queryset = GPU.objects.filter(brand=1).filter(status=1).order_by("-date_released")
-    template_name = "amd.html"
-    paginate_by = 12
+    template_name = "gpu.html"
+    paginate_by = 8
 
 
 class NVIDIAList(generic.ListView):
     model = GPU
     queryset = GPU.objects.filter(brand=0).filter(status=1).order_by("-date_released")
-    template_name = "nvidia.html"
-    paginate_by = 12
+    template_name = "gpu.html"
+    paginate_by = 8
 
 
 class GPUDetail(View):
@@ -106,19 +114,51 @@ class GPUDetail(View):
         )
 
 
-
 def AddGPU(request):
 
     if request.POST:
 
-        add_gpu_form = AddGPUForm(request.POST, request.FILES)
-        if add_gpu_form.is_valid():
-            add_gpu_form.save()
+        gpu_form = GPUForm(request.POST, request.FILES)
+        if gpu_form.is_valid():
+            gpu_form.save()
+            return HttpResponseRedirect("/gpu/")
 
     return render(
         request,
         "add_gpu.html",
         {
-            "add_gpu_form": AddGPUForm(),
+            "gpu_form": GPUForm(),
         }
     )
+
+
+def EditGPU(request, slug):
+
+    context ={}
+ 
+    gpu = get_object_or_404(GPU, slug=slug)
+ 
+    form = GPUForm(request.POST or None, instance = gpu)
+
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect("/gpu/")
+
+    context["form"] = form
+ 
+    return render(request, "edit_gpu.html", context)
+
+
+def DeleteGPU(request, slug):
+
+    context ={}
+ 
+    gpu = get_object_or_404(GPU, slug=slug)
+ 
+ 
+    if request.method =="POST":
+        gpu.delete()
+        return HttpResponseRedirect("/gpu/")
+ 
+    return render(request, "delete_gpu.html", context)
+

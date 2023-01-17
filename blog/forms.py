@@ -6,7 +6,7 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body', 'brand',)
 
-class AddGPUForm(forms.ModelForm):
+class GPUForm(forms.ModelForm):
 
     class Meta:
         model = GPU

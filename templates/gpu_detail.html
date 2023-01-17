@@ -2,6 +2,18 @@
 
 {% block content %}
 
+{% load static %}
+
 <h1>{{ gpu.name }}</h1>
+
+{% if "placeholder" in gpu.image.url %}
+<img class="card-img-top" alt="A comptuer graphics processing chip." src="{% static 'media/Placeholder.jpg' %}" />
+{% else %}
+<img class="card-img-top" alt="A picture of the {{gpu.name}} chip."
+    src=" {{ gpu.image.url }}"/>
+{% endif %}
+
+
+
 
 {% endblock content %}

@@ -55,9 +55,8 @@ class GPU(models.Model):
         return self.likes.count()
 
     def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.name)
-        return super().save(*args, **kwargs)
+        self.slug = slugify(self.name)
+        return super(GPU, self).save(*args, **kwargs)
 
     # https://www.benchatronics.com/detail/how-to-use-slug-and-populate-slug-outsude-django-admin
 

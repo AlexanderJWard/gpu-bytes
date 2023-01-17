@@ -7,9 +7,15 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 left">
+            <div>
+                <h2 class="d-inline">Filter by...</h2>
+                <button type="button" class="btn btn-outline-dark filter-btn"><a class="" href="{% url 'gpu' %}">View All</a></button>
+                <button type="button" class="btn btn-outline-dark filter-btn"><a class="" href="{% url 'amd' %}">AMD</a></button>
+                <button type="button" class="btn btn-outline-dark filter-btn"><a class="" href="{% url 'nvidia' %}">NVIDIA</a></button>
+            </div>
             <div class="row card-border">
                 {% for post in gpu_list %}
-                <div class="col-sm-12 col-md-2 card-parent">
+                <div class="col-sm-12 col-md-3 card-parent">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
@@ -20,14 +26,25 @@
                                 <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
                                         src=" {{ post.image.url }}"></a>
                                 {% endif %}
+                                <div>
+                                    <a class="" href="{% url 'edit_gpu' post.slug %}"><i
+                                            class="mr-1 lightblue-bg edit-btn fa-solid fa-pencil"></i></a>
+                                    <a class="" href="{% url 'delete_gpu' post.slug %}"><i
+                                            class="red-bg edit-btn fa-solid fa-trash-can"></i></a>
+                                </div>
                             </div>
+
                             <a href="{% url 'gpu_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title mt-2">{{ post.name }}</h2>
                                 <p class="card-text">Brand: {{ post.brand }}</p>
                             </a>
-                            <p class="card-text">{{ post.created_on}} <i
-                                    class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i><strong>{{
-                                    post.number_of_likes }}</strong></p>
+                            <p class="card-text">{{ post.created_on}}</p>
+                            {% if user.is_superuser %}
+                            <p>{{ post.id }}</p>
+                            <button type="button"><a class="" href="{% url 'edit_gpu' post.slug %}">UPDATE</a></button>
+                            <button type="button"><a class=""
+                                    href="{% url 'delete_gpu' post.slug %}">DELETE</a></button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -35,20 +52,21 @@
             </div>
             <div class="row card-border">
                 {% endif %}
+                {% if user.is_superuser %}
+                <button type="button"><a class="" href="{% url 'add_gpu' %}">Add a GPU</a></button>
+                {% endif %}
                 {% empty %}
                 {% if user.is_superuser %}
-                    <p>Admin Text</p>
+                <p>Admin Text</p>
                 {% endif %}
-                    <p>Text</p>
+                <p>Text</p>
                 {% endfor %}
 
             </div>
         </div>
     </div>
 
-    {% if user.is_superuser %}
-    <button type="button"><a class="" href="{% url 'add_gpu' %}">Add a GPU</a></button>
-    {% endif %}
+
 
     {% if is_paginated %}
     <nav aria-label="Page navigation">
