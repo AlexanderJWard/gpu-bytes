@@ -166,6 +166,11 @@ body {
     background-color: #777777;
 }
 
+.card-brand {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
 .card {
     background-color: transparent;
     border: none;
@@ -190,7 +195,8 @@ body {
 }
 
 .card-parent:hover .post-link *,
-.card-parent:hover .card-text {
+.card-parent:hover .card-text,
+.card-parent:hover .card-title {
     color: #bd0000;
 }
 
@@ -204,7 +210,8 @@ body {
 }
 
 .filter-btn a,
-.edit-btn a {
+.edit-btn a,
+.add-btn a {
     text-decoration: none;
     color: #000;
     font-family: 'Quicksand', sans-serif;
@@ -217,8 +224,20 @@ body {
 
 .filter-btn:hover a,
 .edit-btn:hover a,
-.edit-btn:hover i {
+.edit-btn:hover i,
+.add-btn:hover a {
     color: #fafaff;
+}
+
+.add-btn a {
+    font-size: 30px;
+}
+
+.add-btn {
+    border-radius: 50%;
+    border: 2px solid;
+    width: 5rem;
+    height: 5rem;
 }
 
 /* post detail */
@@ -283,6 +302,15 @@ body {
 
     .card-parent:not(:last-child) {
         border-bottom: 1px solid #77777725;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .filter-btn {
+        display: block;
+        width: 100%;
     }
 
 }

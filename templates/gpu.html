@@ -7,20 +7,27 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 left">
-            <div>
-                <h2 class="d-inline">Filter by...</h2>
-                <button type="button" class="btn btn-outline-dark filter-btn"><a class="" href="{% url 'gpu' %}">View All</a></button>
-                <button type="button" class="btn btn-outline-dark filter-btn"><a class="" href="{% url 'amd' %}">AMD</a></button>
-                <button type="button" class="btn btn-outline-dark filter-btn"><a class="" href="{% url 'nvidia' %}">NVIDIA</a></button>
+            <div class="mt-2">
+                <p class="d-inline">Sort by:</p>
+                <button type="button" class="btn btn-outline-dark filter-btn m-2"><a class="" href="{% url 'gpu' %}">View All</a></button>
+                <button type="button" class="btn btn-outline-dark filter-btn m-2"><a class="" href="{% url 'amd' %}">AMD</a></button>
+                <button type="button" class="btn btn-outline-dark filter-btn m-2"><a class="" href="{% url 'nvidia' %}">NVIDIA</a></button>
                 {% if user.is_superuser %}
-                <button type="button" class="btn btn-outline-danger filter-btn"><a class="" href="{% url 'gpu_admin' %}">ADMIN</a></button>
+                <button type="button" class="btn btn-outline-danger filter-btn mx-2"><a class="" href="{% url 'gpu_admin' %}">ADMIN</a></button>
                 {% endif %}
             </div>
-            <div class="row card-border">
+            <div class="row card-border mt-3">
                 {% for post in gpu_list %}
-                <div class="col-12 col-md-3 card-parent">
+                <div class="col-12 col-md-4 col-lg-3 card-parent">
                     <div class="card mb-4">
                         <div class="card-body">
+                            <a href="{% url 'gpu_detail' post.slug %}" class="post-link">
+                                {% if post.brand == 0 %}
+                                <p class="card-text card-brand mb-0">AMD</p>
+                                {% elif post.brand == 1 %}
+                                <p class="card-text card-brand mb-0">NVIDIA</p>
+                                {% endif %}
+                            </a>
                             <div class="image-container">
                                 {% if post.status == 0 %}
                                 <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
@@ -32,25 +39,21 @@
                                 <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
                                         src=" {{ post.image.url }}"></a>
                                 {% endif %}
-                                {% if user.is_superuser %}
-                                <div class="d-flex justify-content-center mt-2">
-                                    <button type="button" class="btn btn-outline-success edit-btn mr-2"><a class="edit-btn" href="{% url 'update_gpu' post.slug %}"><i class="mr-2 gray-bg fa-solid fa-pencil"></i>EDIT</a></button>
-                                    <button type="button" class="btn btn-outline-danger edit-btn ml-2"><a class="edit-btn-r" href="{% url 'delete_gpu' post.slug %}"><i class="mr-2 gray-bg fa-solid fa-trash-can"></i>DELETE</a></button>
-                                </div>
-                                {% endif %}
                             </div>
-
-                            <a href="{% url 'gpu_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title mt-2">{{ post.name }}</h2>
-                                <p class="card-text">Brand: {{ post.brand }}</p>
-                            </a>
-                            <p class="card-text">{{ post.created_on}}</p>
+                            <h3 class="card-title mt-2">{{ post.name }}</h3>
+                            <p class="card-text">Released on {{ post.date_released }}</p>
+                            {% if user.is_superuser %}
+                            <div class="d-flex justify-content-center mt-2">
+                                <button type="button" class="btn btn-outline-success edit-btn mr-2"><a class="" href="{% url 'update_gpu' post.slug %}"><i class="mr-2 gray-bg fa-solid fa-pencil"></i>EDIT</a></button>
+                                <button type="button" class="btn btn-outline-danger edit-btn ml-2"><a class="" href="{% url 'delete_gpu' post.slug %}"><i class="mr-2 gray-bg fa-solid fa-trash-can"></i>DELETE</a></button>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:4 %}
             </div>
-            <div class="row card-border">
+            <div class="row card-border mt-3">
                 {% endif %}
                 {% empty %}
                 {% if user.is_superuser %}
@@ -58,11 +61,11 @@
                 {% endif %}
                 <p>Text</p>
                 {% endfor %}
-                <div class="col-12 col-md-3 card-parent">
+                <div class="col-12 col-md-4 col-lg-3 px-0 card-parent d-flex align-items-center justify-content-center">
                     <div class="card mb-4">
                         <div class="card-body">
                         {% if user.is_superuser %}
-                        <button type="button"><a class="" href="{% url 'add_gpu' %}">Add a GPU</a></button>
+                        <button type="button" class="btn btn-outline-success add-btn mr-2"><a class="" href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i></a></button>
                         {% endif %}
                     </div>
                     </div>
