@@ -158,12 +158,17 @@ body {
     background-color: transparent;
 }
 
-/* blog post card */
+/* blog post card and gpu card*/
 
 .image-container img {
     border: 2px solid #777777;
     border-radius: .90rem;
     background-color: #777777;
+}
+
+.card-img-overlay {
+    margin-top: 1.9rem;
+    opacity: 0.5;
 }
 
 .card-brand {
@@ -209,6 +214,21 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.filter-menu a {    
+    color: #000;
+    font-family: 'Quicksand', sans-serif;   
+}
+
+.filter-menu a:hover {
+    background-color: #343a40;
+    color: #fafaff;
+    font-weight: bold;
+}
+
+.filter-menu .filter-admin:hover {
+    background-color: #bd0000;
+}
+
 .filter-btn a,
 .edit-btn a,
 .add-btn a {
@@ -240,7 +260,14 @@ body {
     height: 5rem;
 }
 
-/* post detail */
+/* empty posts and gpus */
+
+.empty-gpu {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px; 
+}
+
+/* post detail and gpu detail */
 
 .masthead {
     margin-top: 10px;
@@ -308,9 +335,10 @@ body {
 
 @media screen and (max-width: 450px) {
 
-    .filter-btn {
+    /* .filter-btn {
         display: block;
         width: 100%;
-    }
+        margin: 1rem 0 1rem 0;
+    } */
 
 }
