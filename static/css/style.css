@@ -237,7 +237,8 @@ body {
 .edit-btn a,
 .add-btn a,
 .del-btn a,
-.error-btn a {
+.error-btn a,
+.signout-btn a {
     text-decoration: none;
     color: #000;
     font-family: 'Quicksand', sans-serif;
@@ -253,7 +254,8 @@ body {
 .edit-btn:hover i,
 .add-btn:hover a,
 .del-btn:hover a,
-.error-btn:hover a {
+.error-btn:hover a,
+.signout-btn:hover a {
     color: #fafaff;
 }
 
@@ -344,26 +346,43 @@ body {
     border-radius: .9rem;
 }
 
-/* login template */
+/* account templates */
 
-.login-title {
+.account-image {
+    background-image: url("/static/media/LoginImage.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.account-text h2 {
     font-family: 'Quicksand', sans-serif;
-    margin-top: 10rem;
-    text-align: center;
-    font-weight: 500;
-    font-size: 60px;
+    font-weight: 400;
+    font-size: 40px;
+    font-weight: bold;
 }
 
-/* 404 */
-
-.err a {
-    color: #fafaff;
-    text-decoration: none;
+.account-text p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    margin: 2rem 0;
+    padding-right: 5rem;
 }
 
-.err:hover a {
-    color: #fafaff;
+.account-text input {
+    display: block;
 }
+
+.account-text button {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.signout-btn {
+    font-size: 30px;
+    width: 5rem;
+    margin-right: 1rem;
+    color: #000;
+}
+
     
 
 @media screen and (max-width: 1000px) {
@@ -386,12 +405,19 @@ body {
 
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 425px) {
 
-    /* .filter-btn {
-        display: block;
-        width: 100%;
-        margin: 1rem 0 1rem 0;
-    } */
+    .account-image {
+        height: 15rem;
+    }
+
+    .account-text p {
+        padding-right: 0;
+    }
+
+    .account-text h2 {
+        font-size: 30px;
+        font-weight: bold;
+    }
 
 }
