@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 import dj_database_url
 from django.contrib.messages import constants as messages
-import cloudinary
 
 if os.path.isfile('env.py'):
     import env
@@ -32,7 +31,8 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+# DEBUG = 'DEV' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ["gpu-bytes.herokuapp.com", "localhost"]
 
@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'blog',
 ]
+
+CLOUDINARY_URL = 'CLOUDINARY_URL' in os.environ
 
 SITE_ID = 1
 
@@ -164,10 +166,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-
-CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

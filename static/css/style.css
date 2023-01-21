@@ -236,7 +236,8 @@ body {
 .filter-btn a,
 .edit-btn a,
 .add-btn a,
-.del-btn a {
+.del-btn a,
+.error-btn a {
     text-decoration: none;
     color: #000;
     font-family: 'Quicksand', sans-serif;
@@ -251,13 +252,32 @@ body {
 .edit-btn:hover a,
 .edit-btn:hover i,
 .add-btn:hover a,
-.del-btn:hover a {
+.del-btn:hover a,
+.error-btn:hover a {
     color: #fafaff;
 }
 
 .del-p {
     text-align: center;
     width: 100%;
+}
+
+.error-parent {
+    margin-top: 6rem;
+}
+
+.error-title {
+    margin: 3rem 0;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.error-text {
+    margin-bottom: 3rem;
+}
+
+.error-btn a {
+    font-size: 20px;
 }
 
 .del-parent button {
@@ -332,6 +352,17 @@ body {
     text-align: center;
     font-weight: 500;
     font-size: 60px;
+}
+
+/* 404 */
+
+.err a {
+    color: #fafaff;
+    text-decoration: none;
+}
+
+.err:hover a {
+    color: #fafaff;
 }
     
 

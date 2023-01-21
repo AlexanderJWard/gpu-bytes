@@ -3,12 +3,13 @@ from django.views import generic, View
 from .models import Post, GPU
 from .forms import CommentForm, GPUForm
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.exceptions import PermissionDenied
 from django.template import loader
 from django.contrib import messages
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
 
 
 class PostList(generic.ListView):
@@ -96,6 +97,12 @@ class AdminGPUList(ListView):
     template_name = "gpu.html"
     paginate_by = 8
     queryset = GPU.objects.order_by("brand","-date_released")
+
+    def get(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.error(request, 'DENIED: User is not an admin.')
+            raise PermissionDenied
+        return super().get(request, *args, **kwargs)
     
 
 class AMDList(ListView):
@@ -125,8 +132,8 @@ class AddGPU(CreateView):
 
     def get(self, request, *args, **kwargs):
         if not self.request.user.is_superuser:
-            messages.warning(request, 'You do not have permission to do this.')
-            return HttpResponseRedirect('/')
+            messages.error(request, 'DENIED: User is not an admin.')
+            raise PermissionDenied
         return super().get(request, *args, **kwargs)
     
     def form_valid(self, form):
@@ -149,8 +156,8 @@ class UpdateGPU(UpdateView):
 
     def get(self, request, *args, **kwargs):
         if not self.request.user.is_superuser:
-            messages.warning(request, 'You do not have permission to do this.')
-            return HttpResponseRedirect('/')
+            messages.error(request, 'DENIED: User is not an admin.')
+            raise PermissionDenied
         return super().get(request, *args, **kwargs)
     
     def form_valid(self, form):
@@ -172,11 +179,24 @@ class DeleteGPU(DeleteView):
 
     def get(self, request, *args, **kwargs):
         if not self.request.user.is_superuser:
-            messages.warning(request, 'You do not have permission to do this.')
-            return HttpResponseRedirect('/')
+            messages.error(request, 'DENIED: User is not an admin.')
+            raise PermissionDenied
         return super().get(request, *args, **kwargs)
 
     def get_success_url(self):
         messages.success(self.request, "GPU Sucessfully deleted.")
         return reverse_lazy("gpu")
+
+
+class Error403(TemplateView):
+    template_name = '403.html'
+
+
+class Error404(TemplateView):
+    template_name = '404.html'
+
+
+class Error500(TemplateView):
+    template_name = '500.html'
+
 

@@ -13,4 +13,7 @@ urlpatterns = [
     path('gpu/<slug:slug>/delete/', views.DeleteGPU.as_view(), name="delete_gpu" ),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
+    path('403', views.Error403.as_view(), name='403'),
+    path('404', views.Error404.as_view(), name='404'),
+    path('500', views.Error500.as_view(), name='500'),
 ]
