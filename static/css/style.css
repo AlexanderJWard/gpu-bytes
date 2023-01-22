@@ -161,15 +161,20 @@ body {
 /* blog post card and gpu card*/
 
 .image-container img {
-    border: 2px solid #777777;
+    border: 2px solid #fafaff;
     border-radius: .90rem;
-    background-color: #777777;
+    background-color: #fafaff;
 }
 
-.card-img-top {
+#gpu-list .card-img-top {
     width: 100%;
     height: 13vw;
     object-fit: cover;
+}
+
+.post-subtitle {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
 }
 
 .card-img-overlay {
@@ -313,7 +318,8 @@ body {
 
 /* empty posts and gpus */
 
-.empty-gpu {
+.empty-gpu,
+.empty-post {
     font-family: 'Quicksand', sans-serif;
     font-size: 30px; 
 }
@@ -331,9 +337,7 @@ body {
 }
 
 .masthead-image {
-    overflow: hidden;
     width: 100%;
-    height: 30rem;
 }
 
 .btn-like {
@@ -352,6 +356,17 @@ body {
     color: #bd0000;
     border: 1px solid #bd0000;
     border-radius: .9rem;
+}
+
+.gpu-title {
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+}
+
+.gpu-text {
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* account templates */
@@ -421,7 +436,8 @@ body {
         border-bottom: 1px solid #77777725;
     }
 
-    .card-img-top {
+    #gpu-list .card-img-top,
+    #post-list .card-img-top {
         width: 100%;
         height: 50vw;
         object-fit: cover;

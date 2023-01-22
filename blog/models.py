@@ -33,22 +33,27 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        return super(Post, self).save(*args, **kwargs)
+
 
 class GPU(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-    gpu_brand = models.IntegerField(choices=ADD_GPU_BRAND, default=0)
+    name = models.CharField(max_length=200, unique=True, verbose_name="GPU Name")
+    gpu_brand = models.IntegerField(choices=ADD_GPU_BRAND, default=0, verbose_name="Brand")
     slug = models.SlugField(max_length=200, unique=True)
     image = CloudinaryField('image', default='placeholder')
-    content = models.TextField()
-    memory_size = models.IntegerField(choices=MEMORY_SIZE, default=0)
-    memory_type = models.TextField(blank=True)
-    base_clock = models.SmallIntegerField(default=0)
-    boost_clock = models.SmallIntegerField(default=0)
-    specs = models.TextField(blank=True)
-    date_released = models.DateField(default=date.today)
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    content = models.TextField(verbose_name="GPU Information")
+    sourced_from = models.CharField(max_length=255, blank=True, verbose_name="Content Sourced From")
+    memory_size = models.IntegerField(choices=MEMORY_SIZE, default=0, verbose_name="Memory Size")
+    memory_type = models.CharField(max_length=10, verbose_name="Memory Type")
+    base_clock = models.SmallIntegerField(default=0, verbose_name="Base Clock (MHz)")
+    boost_clock = models.SmallIntegerField(default=0, verbose_name="Boost Clock (MHz)")
+    specs = models.TextField(blank=True, verbose_name="Other Specs")
+    date_released = models.DateField(default=date.today, verbose_name="Date Released")
+    created_on = models.DateTimeField(auto_now_add=True, verbose_name="Created On")
+    updated_on = models.DateTimeField(auto_now=True, verbose_name="Updated On")
+    status = models.IntegerField(choices=STATUS, default=0, verbose_name="Status")
 
     class Meta:
         ordering = ['-date_released']

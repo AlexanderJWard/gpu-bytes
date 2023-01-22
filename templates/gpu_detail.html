@@ -6,7 +6,7 @@
 
 <div class="masthead">
     <div class="container">
-        <div class="row g-0">
+        <div class="row">
             <div class="col-md-12 masthead-text">
                 <h1 class="post-title">
                     {{ gpu.get_gpu_brand_display }}
@@ -21,7 +21,34 @@
                 {% endif %}
             </div>
             <p class="post-subtitle pl-3 pt-3">
-                Created on: {{ gpu.created_on }} | Updated on: {{ gpu.updated_on }}</p>
+                Created on: {{ gpu.created_on }}<br>Updated on: {{ gpu.updated_on }}</p>
+            <div class="gpu-body mx-3">
+                {% if gpu.content %}
+                <p class="gpu-title">GPU Information:</p>
+                <p class="gpu-text">{{ gpu.content }}</p>
+                {% endif %}
+                {% if gpu.memory_size %}
+                <p class="gpu-title">Memory Size:</p>
+                <p class="gpu-text">{{ gpu.get_memory_size_display }}</p>
+                {% endif %}
+                {% if gpu.memory_type %}
+                <p class="gpu-title">Memory Type:</p>
+                <p class="gpu-text">{{ gpu.memory_type }}</p>
+                {% endif %}
+                {% if gpu.base_clock %}
+                <p class="gpu-title">Base Clock:</p>
+                <p class="gpu-text">{{ gpu.base_clock }} MHz</p>
+                {% endif %}
+                {% if gpu.boost_clock %}
+                <p class="gpu-title">Boost Clock:</p>
+                <p class="gpu-text">{{ gpu.boost_clock }} MHz</p>
+                {% endif %}
+                {% if gpu.specs %}
+                <p class="gpu-title">Other Specs:</p>
+                <p class="gpu-text">{{ gpu.specs }}</p>
+                {% endif %}
+                <p class="gpu-text">Content and image sourced from <a href="{{ gpu.sourced_from }}" target="_blank">{{ gpu.sourced_from }}</a></p>
+            </div>
         </div>
     </div>
 </div>

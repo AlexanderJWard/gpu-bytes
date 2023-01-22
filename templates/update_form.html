@@ -6,9 +6,9 @@
 
 <div class="container-fluid">
 
-    <h1>Update GPU</h1>
+    <h1 class="my-5 q-400">Update Record:</h1>
 
-    <form method="POST" action="" enctype="multipart/form-data">
+    <form method="POST" class="q-400" action="" enctype="multipart/form-data">
         {% csrf_token %}
  
         {{ form | crispy }}

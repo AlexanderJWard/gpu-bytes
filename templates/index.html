@@ -9,17 +9,33 @@
 
         <!-- GPU blog post -->
         <div class="col-12 left">
-            <div class="row card-border">
+            {% if user.is_superuser %}
+            <div class="mt-2">
+                <button type="button" class="btn btn-outline-dark filter-btn" data-toggle="dropdown"
+                    aria-expanded="false">
+                    Admin <i class="pl-2 fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu filter-menu">
+                    <a class="dropdown-item filter-admin" href="{% url 'post_admin' %}">View All</a>
+                </div>
+            </div>
+            {% endif %}
+            <div class="row card-border mt-2">
                 {% for post in post_list %}
                 <div class="col-sm-12 col-md-4 card-parent">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
+                            <div class="image-container" id="post-list">
                                 {% if "placeholder" in post.featured_image.url %}
-                                {% load static %}
                                 <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %}"></a>
                                 {% else %}
                                 <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {{ post.featured_image.url }}"></a>
+                                {% endif %}
+                                {% if post.status == 0 %}
+                                <div class="card-img-overlay">
+                                    <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top"
+                                            src=" {% static 'media/Draft.jpg' %}"></a>
+                                </div>
                                 {% endif %}
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
@@ -28,15 +44,48 @@
                                 <p class="card-text">Author: {{ post.author }}</p>
                             </a>
                             <p class="card-text">{{ post.created_on}} <i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i><strong>{{ post.number_of_likes }}</strong></p>
+                            {% if user.is_superuser %}
+                            <div class="d-flex mt-2">
+                                <button type="button" class="btn btn-outline-success edit-btn mr-2"><a class="card-link"
+                                        href="{% url 'update_post' post.slug %}"><i
+                                            class="mr-2 gray-bg fa-solid fa-pencil"></i>EDIT</a></button>
+                                <button type="button" class="btn btn-outline-danger edit-btn ml-2"><a class="card-link"
+                                        href="{% url 'delete_post' post.slug %}"><i
+                                            class="mr-2 gray-bg fa-solid fa-trash-can"></i>DELETE</a></button>
+                            </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
             </div>
-            <div class="row card-border">
+            <div class="row card-border mt-3">
+                {% endif %}
+                {% if forloop.last %}
+                <div class="col-12 col-md-4 px-0 card-parent d-flex align-items-center justify-content-center">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            {% if user.is_superuser %}
+                            <button type="button" class="btn btn-outline-success add-btn"><a class=""
+                                    href="{% url 'add_post' %}"><i class="fa-solid fa-plus"></i></a></button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% empty %}
+                {% if user.is_superuser %}
+                <div class="col-12 d-flex align-items-center justify-content-center flex-column">
+                    <p class="empty-post my-5">No Posts Found</p>
+                    <button type="button" class="btn btn-outline-success add-btn"><a class=""
+                            href="{% url 'add_post' %}"><i class="fa-solid fa-plus"></i></a></button>
+                </div>
+                {% else %}
+                <div class="col-12 d-flex align-items-center justify-content-center flex-column">
+                    <p class="empty-post my-5">No Posts Found</p>
+                </div>
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>

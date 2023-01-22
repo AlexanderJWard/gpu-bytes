@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from .models import Post, GPU
-from .forms import CommentForm, GPUForm
+from .forms import CommentForm, GPUForm, PostForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.exceptions import PermissionDenied
 from django.template import loader
@@ -18,11 +18,24 @@ class PostList(generic.ListView):
     template_name = "index.html"
     paginate_by = 6
 
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+class AdminPostList(generic.ListView):
+    model = Post
+    queryset = Post.objects.order_by("-created_on")
+    template_name = "index.html"
+    paginate_by = 6
+
+    def get(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.error(request, 'DENIED: User is not an admin.')
+            raise PermissionDenied
+        return super().get(request, *args, **kwargs)
+
 
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
+        queryset = Post.objects
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by('created_on')
         liked = False
@@ -149,10 +162,34 @@ class AddGPU(CreateView):
 
 
 @method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+class AddPost(CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = "add_post.html"
+
+    def get(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.error(request, 'DENIED: User is not an admin.')
+            raise PermissionDenied
+        return super().get(request, *args, **kwargs)
+    
+    def form_valid(self, form):
+        """
+        Upon success prompt the user with a message
+        """
+        messages.success(self.request, "Post Sucessfully created.")
+        super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
+    
+    def get_success_url(self, **kwargs):
+        return reverse_lazy("post_detail", args=[str(self.object.slug)])
+
+
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
 class UpdateGPU(UpdateView):
     model = GPU
     form_class = GPUForm
-    template_name = 'update_gpu.html'
+    template_name = 'update_form.html'
 
     def get(self, request, *args, **kwargs):
         if not self.request.user.is_superuser:
@@ -173,6 +210,30 @@ class UpdateGPU(UpdateView):
 
 
 @method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+class UpdatePost(UpdateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'update_form.html'
+
+    def get(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.error(request, 'DENIED: User is not an admin.')
+            raise PermissionDenied
+        return super().get(request, *args, **kwargs)
+    
+    def form_valid(self, form):
+        """
+        Upon success prompt the user with a message
+        """
+        messages.success(self.request, "Post Sucessfully updated.")
+        super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
+    
+    def get_success_url(self, **kwargs):
+        return reverse_lazy("post_detail", args=[str(self.object.slug)])
+
+
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
 class DeleteGPU(DeleteView):
     model = GPU
     template_name = 'delete_gpu.html'
@@ -186,6 +247,22 @@ class DeleteGPU(DeleteView):
     def get_success_url(self):
         messages.success(self.request, "GPU Sucessfully deleted.")
         return reverse_lazy("gpu")
+
+
+@method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
+class DeletePost(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'
+
+    def get(self, request, *args, **kwargs):
+        if not self.request.user.is_superuser:
+            messages.error(request, 'DENIED: User is not an admin.')
+            raise PermissionDenied
+        return super().get(request, *args, **kwargs)
+
+    def get_success_url(self):
+        messages.success(self.request, "Post Sucessfully deleted.")
+        return reverse_lazy("home")
 
 
 class Error403(TemplateView):
