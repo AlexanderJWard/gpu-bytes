@@ -10,6 +10,8 @@ GPU_BRAND = ((0, "NVIDIA"), (1, "AMD"), (2, "OTHER"))
 
 ADD_GPU_BRAND = ((0, "NVIDIA"), (1, "AMD"))
 
+MEMORY_SIZE = ((0, "4GB"), (1, "8GB"), (2, "12GB"), (3, "16GB"), (4, "20GB"), (5, "24GB"), (6, "48GB"))
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -34,25 +36,25 @@ class Post(models.Model):
 
 class GPU(models.Model):
     name = models.CharField(max_length=200, unique=True)
-    brand = models.IntegerField(choices=ADD_GPU_BRAND, default=0)
+    gpu_brand = models.IntegerField(choices=ADD_GPU_BRAND, default=0)
     slug = models.SlugField(max_length=200, unique=True)
     image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
+    memory_size = models.IntegerField(choices=MEMORY_SIZE, default=0)
+    memory_type = models.TextField(blank=True)
+    base_clock = models.SmallIntegerField(default=0)
+    boost_clock = models.SmallIntegerField(default=0)
     specs = models.TextField(blank=True)
     date_released = models.DateField(default=date.today)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name="gpu_likes", blank=True)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['-date_released']
 
     def __str__(self):
         return self.name
-
-    def number_of_likes(self):
-        return self.likes.count()
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)

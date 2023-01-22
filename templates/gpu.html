@@ -27,13 +27,6 @@
                 <div class="col-12 col-md-3 card-parent">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <a href="{% url 'gpu_detail' post.slug %}" class="post-link">
-                                {% if post.brand == 0 %}
-                                <p class="card-text card-brand mb-1">NVIDIA</p>
-                                {% elif post.brand == 1 %}
-                                <p class="card-text card-brand mb-1">AMD</p>
-                                {% endif %}
-                            </a>
                             <div class="image-container">
                                 {% if "placeholder" in post.image.url %}
                                 <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
@@ -43,14 +36,16 @@
                                         src=" {{ post.image.url }}"></a>
                                 {% endif %}
                                 {% if post.status == 0 %}
-                                <div class="card-img-overlay image-container">
+                                <div class="card-img-overlay">
                                     <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
                                             src=" {% static 'media/Draft.jpg' %}"></a>
                                 </div>
                                 {% endif %}
                             </div>
-                            <h3 class="card-title mt-2">{{ post.name }}</h3>
-                            <p class="card-text">Released on {{ post.date_released }}</p>
+                            <a href="{% url 'gpu_detail' post.slug %}" class="post-link">
+                                <h3 class="card-title mt-2">{{ post.get_gpu_brand_display }} {{ post.name }}</h3>
+                                <p class="card-text">Released on {{ post.date_released }}</p>
+                            </a>
                             {% if user.is_superuser %}
                             <div class="d-flex justify-content-center mt-2">
                                 <button type="button" class="btn btn-outline-success edit-btn mr-2"><a class="card-link"
@@ -88,7 +83,11 @@
                             href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i></a></button>
                 </div>
                 {% else %}
-                <p>Text</p>
+                <div class="col-12 d-flex align-items-center justify-content-center flex-column">
+                    <p class="empty-gpu my-5">No GPUs Found</p>
+                    <button type="button" class="btn btn-outline-dark empty-btn"><a class=""
+                            href="{% url 'home' %}">Return Home</a></button>
+                </div>
                 {% endif %}
                 {% endfor %}
             </div>

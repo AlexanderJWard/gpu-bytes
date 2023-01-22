@@ -166,8 +166,13 @@ body {
     background-color: #777777;
 }
 
+.card-img-top {
+    width: 100%;
+    height: 13vw;
+    object-fit: cover;
+}
+
 .card-img-overlay {
-    margin-top: 2.1rem;
     opacity: 0.5;
 }
 
@@ -238,7 +243,8 @@ body {
 .add-btn a,
 .del-btn a,
 .error-btn a,
-.signout-btn a {
+.signout-btn a,
+.empty-btn a {
     text-decoration: none;
     color: #000;
     font-family: 'Quicksand', sans-serif;
@@ -255,7 +261,8 @@ body {
 .add-btn:hover a,
 .del-btn:hover a,
 .error-btn:hover a,
-.signout-btn:hover a {
+.signout-btn:hover a,
+.empty-btn:hover a {
     color: #fafaff;
 }
 
@@ -316,6 +323,7 @@ body {
 .masthead {
     margin-top: 10px;
     width: 100%;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .masthead-text {
@@ -325,7 +333,7 @@ body {
 .masthead-image {
     overflow: hidden;
     width: 100%;
-    height: 40rem;
+    height: 30rem;
 }
 
 .btn-like {
@@ -383,9 +391,10 @@ body {
     color: #000;
 }
 
-    
 
 @media screen and (max-width: 1000px) {
+
+    /* navbar */
 
     .navbar .navbar-nav .nav-item:not(:last-child) .nav-link {
         border-bottom: 1px solid #77777725;
@@ -395,17 +404,36 @@ body {
         padding-left: 0px;
     }
 
+    /* blog post card and gpu card */
+
+    .masthead-image {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
+
 }
 
 @media screen and (max-width: 767px) {
+
+    /* blog post card and gpu card */
 
     .card-parent:not(:last-child) {
         border-bottom: 1px solid #77777725;
     }
 
+    .card-img-top {
+        width: 100%;
+        height: 50vw;
+        object-fit: cover;
+    }
+
 }
 
 @media screen and (max-width: 425px) {
+
+
+    /* account templates */
 
     .account-image {
         height: 15rem;

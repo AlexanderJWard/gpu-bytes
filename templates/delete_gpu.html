@@ -10,11 +10,7 @@
     <form method="POST">
         {% csrf_token %}
         <div class="col-12 d-flex align-items-center justify-content-center flex-wrap del-parent">
-            {% if gpu.brand == 0 %}
-            <p class="q-400 fs-30 my-5 del-p">Are you sure you want to delete NVIDIA {{ gpu.name }} ?</p>
-            {% elif gpu.brand == 1 %}
-            <p class="q-400 fs-30 my-5 del-p">Are you sure you want to delete AMD {{ gpu.name }} ?</p>
-            {% endif %}
+            <p class="q-400 fs-30 my-5 del-p">Are you sure you want to delete {{ gpu.get_gpu_brand_display }} {{ gpu.name }} ?</p>
             <button type="submit" class="mx-2 px-5 btn btn-outline-success my-2 del-btn del-btn-y">YES</button>
             <button type="button" class="mx-2 px-5 btn btn-outline-danger my-2 del-btn del-btn-n"><a class="" href="{% url 'gpu' %}">NO</a></button>
         </div>

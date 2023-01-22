@@ -15,15 +15,18 @@
       <form method="post" action="{% url 'account_logout' %}">
         {% csrf_token %}
         {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         <div class="d-flex">
           <button type="submit" class="signout-btn btn btn-outline-success">{% trans 'YES' %}</button>
-          <button type="button" class="signout-btn btn btn-outline-danger"><a class="card-link" href="{% url 'home' %}">{% trans 'NO' %}</a></button>  
+          <button type="button" class="signout-btn btn btn-outline-danger"><a class="card-link"
+              href="{% url 'home' %}">{% trans 'NO' %}</a></button>
         </div>
-        </form>
+      </form>
     </div>
   </div>
 </div>
+
+<!-- Photo by Dave Morgan: https://www.pexels.com/photo/computer-exhaust-fan-2643596/ -->
 
 {% endblock %}

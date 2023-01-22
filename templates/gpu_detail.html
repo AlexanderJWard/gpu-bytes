@@ -1,17 +1,32 @@
 {% extends "base.html" %}
 
-{% block content %}
-
 {% load static %}
 
-<h1>{{ gpu.name }}</h1>
+{% block content %}
 
-{% if "placeholder" in gpu.image.url %}
-<img class="card-img-top" alt="A comptuer graphics processing chip." src="{% static 'media/Placeholder.jpg' %}" />
-{% else %}
-<img class="card-img-top" alt="A picture of the {{gpu.name}} chip."
-    src=" {{ gpu.image.url }}"/>
-{% endif %}
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-12 masthead-text">
+                <h1 class="post-title">
+                    {{ gpu.get_gpu_brand_display }}
+                    {{ gpu.name }}</h1>
+            </div>
+            <div class="col-md-12 masthead-image">
+                {% if "placeholder" in gpu.image.url %}
+                <img class="card-img-top" alt="A comptuer graphics processing chip."
+                    src="{% static 'media/Placeholder.jpg' %}" />
+                {% else %}
+                <img class="card-img-top" alt="A picture of the {{gpu.name}} chip." src=" {{ gpu.image.url }}" />
+                {% endif %}
+            </div>
+            <p class="post-subtitle pl-3 pt-3">
+                Created on: {{ gpu.created_on }} | Updated on: {{ gpu.updated_on }}</p>
+        </div>
+    </div>
+</div>
+
+
 
 
 

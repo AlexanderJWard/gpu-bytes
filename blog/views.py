@@ -88,7 +88,7 @@ class GPUList(ListView):
     model = GPU
     template_name = "gpu.html"
     paginate_by = 8
-    queryset = GPU.objects.filter(status=1).order_by("brand","-date_released")
+    queryset = GPU.objects.filter(status=1).order_by("gpu_brand","-date_released")
 
 
 @method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
@@ -96,7 +96,7 @@ class AdminGPUList(ListView):
     model = GPU
     template_name = "gpu.html"
     paginate_by = 8
-    queryset = GPU.objects.order_by("brand","-date_released")
+    queryset = GPU.objects.order_by("gpu_brand","-date_released")
 
     def get(self, request, *args, **kwargs):
         if not self.request.user.is_superuser:
@@ -107,14 +107,14 @@ class AdminGPUList(ListView):
 
 class AMDList(ListView):
     model = GPU
-    queryset = GPU.objects.filter(brand=1).filter(status=1).order_by("-date_released")
+    queryset = GPU.objects.filter(gpu_brand=1).filter(status=1).order_by("-date_released")
     template_name = "gpu.html"
     paginate_by = 8
 
 
 class NVIDIAList(ListView):
     model = GPU
-    queryset = GPU.objects.filter(brand=0).filter(status=1).order_by("-date_released")
+    queryset = GPU.objects.filter(gpu_brand=0).filter(status=1).order_by("-date_released")
     template_name = "gpu.html"
     paginate_by = 8
 
