@@ -3,12 +3,14 @@
 {% load i18n %}
 {% load account socialaccount %}
 
+{% load static %}
+
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
 
 <div class="row">
-  <div class="col-md-7 account-image"></div>
+  <div class="col-md-7 account-image" style="background-image: url('{% static 'media/LoginImage.jpg' %}')"></div>
   <div class="col-md-5 d-flex flex-column">
     <div class="pl-4 account-text">
       <h2 class="my-3">Welcome to GPU Bytes!</h2>

@@ -357,7 +357,6 @@ body {
 /* account templates */
 
 .account-image {
-    background-image: url("../media/LoginImage.jpg");
     background-size: cover;
     height: 100vh;
 }
