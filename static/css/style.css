@@ -249,7 +249,8 @@ body {
 .del-btn a,
 .error-btn a,
 .signout-btn a,
-.empty-btn a {
+.empty-btn a,
+.update-form-btn {
     text-decoration: none;
     color: #000;
     font-family: 'Quicksand', sans-serif;
@@ -267,7 +268,8 @@ body {
 .del-btn:hover a,
 .error-btn:hover a,
 .signout-btn:hover a,
-.empty-btn:hover a {
+.empty-btn:hover a,
+.update-form-btn {
     color: #fafaff;
 }
 
