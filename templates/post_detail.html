@@ -27,17 +27,16 @@
 
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <p class="card-text ">
+        <div class="col card mb-4  mt-3 left top">
+            <div class="card-body p-0">
+                <p class="card-text">
                     {{ post.content | linebreaks | safe }}
                 </p>
                 {% if post.sourced_from %}
                 <p class="card-text">Image sourced from <a href="{{ post.sourced_from }}" target="_blank">{{ post.sourced_from }}</a></p>
                 {% endif %}
                 <div class="row">
-
-                    <div class="col-1">
+                    <div class="col-12 mt-3">
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
@@ -51,7 +50,7 @@
                             {% else %}
                             <span class="text-secondary"><i class="fa-solid fa-fire-flame-curved mx-1"></i></span>
                             {% endif %}
-                        <span class="text-secondary">{{ post.number_of_likes }} </span>
+                        <span class="text-secondary pl-2">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
                 </div>
