@@ -43,7 +43,8 @@
                                 <p class="card-text">{{ post.excerpt }}</p>
                                 <p class="card-text">Author: {{ post.author }}</p>
                             </a>
-                            <p class="card-text">{{ post.created_on}} <i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i><strong>{{ post.number_of_likes }}</strong></p>
+                            <p class="card-text">{{ post.created_on}}</p>
+                            <p class="card-text"><i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i><strong> {{ post.number_of_likes }}</strong></p>
                             {% if user.is_superuser %}
                             <div class="d-flex mt-2">
                                 <button type="button" class="btn btn-outline-success edit-btn mr-2"><a class="card-link"
