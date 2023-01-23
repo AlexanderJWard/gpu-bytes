@@ -74,7 +74,7 @@ class Comment(models.Model):
     name = models.CharField(max_length=80)
     email = models.TextField()
     body = models.TextField()
-    brand = models.IntegerField(choices=GPU_BRAND, default=2)
+    brand = models.IntegerField(choices=GPU_BRAND, default=2, verbose_name="Current GPU")
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
