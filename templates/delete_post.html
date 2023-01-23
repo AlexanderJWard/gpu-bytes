@@ -10,7 +10,7 @@
     <form method="POST">
         {% csrf_token %}
         <div class="col-12 d-flex align-items-center justify-content-center flex-wrap del-parent">
-            <p class="q-400 fs-30 my-5 del-p">Are you sure you want to delete <strong>{{ post.title }}</strong> by <strong>{{ gpu.author }}</strong> ?</p>
+            <p class="q-400 fs-30 my-5 del-p">Are you sure you want to delete <strong>{{ post.title }}</strong> by <strong>{{ post.author }}</strong> ?</p>
             <button type="submit" class="mx-2 px-5 btn btn-outline-success my-2 del-btn del-btn-y">YES</button>
             <button type="button" class="mx-2 px-5 btn btn-outline-danger my-2 del-btn del-btn-n"><a class="" href="{% url 'home' %}">NO</a></button>
         </div>
