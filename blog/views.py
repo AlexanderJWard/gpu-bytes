@@ -171,12 +171,14 @@ class AddPost(CreateView):
         if not self.request.user.is_superuser:
             messages.error(request, 'DENIED: User is not an admin.')
             raise PermissionDenied
+            
         return super().get(request, *args, **kwargs)
     
     def form_valid(self, form):
         """
         Upon success prompt the user with a message
         """
+        form.instance.author = self.request.user
         messages.success(self.request, "Post Sucessfully created.")
         super().form_valid(form)
         return HttpResponseRedirect(self.get_success_url())

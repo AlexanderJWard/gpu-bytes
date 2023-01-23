@@ -9,7 +9,7 @@
     <form method="post" style="margin-top: 1.3em;" action="{% url 'add_post' %}" enctype="multipart/form-data">
         {{ form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="btn btn-outline-success add-btn">Submit</button>
+        <button type="submit" class="btn btn-outline-success form-btn">Submit</button>
     </form>
 
 

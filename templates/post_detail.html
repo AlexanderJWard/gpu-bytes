@@ -75,6 +75,7 @@
                         </span> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
+                    <p>Current GPU: <strong>{{ comment.get_brand_display }}</strong></p>
                 </div>
                 {% endfor %}
             </div>
