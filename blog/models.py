@@ -23,6 +23,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name="blog_likes", blank=True)
+    sourced_from = models.URLField(max_length=255, blank=True, verbose_name="Image Sourced From")
 
     class Meta:
         ordering = ['-created_on']
@@ -44,7 +45,7 @@ class GPU(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     image = CloudinaryField('image', default='placeholder')
     content = models.TextField(verbose_name="GPU Information")
-    sourced_from = models.CharField(max_length=255, blank=True, verbose_name="Content Sourced From")
+    sourced_from = models.URLField(max_length=255, blank=True, verbose_name="Content Sourced From")
     memory_size = models.IntegerField(choices=MEMORY_SIZE, default=0, verbose_name="Memory Size")
     memory_type = models.CharField(max_length=10, verbose_name="Memory Type")
     base_clock = models.SmallIntegerField(default=0, verbose_name="Base Clock (MHz)")

@@ -47,7 +47,9 @@
                 <p class="gpu-title">Other Specs:</p>
                 <p class="gpu-text">{{ gpu.specs }}</p>
                 {% endif %}
+                {% if gpu.sourced_from %}
                 <p class="gpu-text">Content and image sourced from <a href="{{ gpu.sourced_from }}" target="_blank">{{ gpu.sourced_from }}</a></p>
+                {% endif %}
             </div>
         </div>
     </div>

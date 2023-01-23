@@ -9,7 +9,7 @@
         <div class="row g-0">
             <div class="col-md-12 masthead-text">
                 <h1 class="post-title">{{ post.title }}</h1>
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">Created by: {{ post.author }}</p>
             </div>
             <div class="d-none d-md-block col-md-12 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
@@ -19,6 +19,8 @@
                 <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {{ post.featured_image.url }}"></a>
                 {% endif %}
             </div>
+            <p class="post-subtitle pl-3 pt-3">
+                Created on: {{ post.created_on }}<br>Updated on: {{ post.updated_on }}</p>
         </div>
     </div>
 </div>
@@ -30,6 +32,9 @@
                 <p class="card-text ">
                     {{ post.content | safe }}
                 </p>
+                {% if post.sourced_from %}
+                <p class="card-text">Image sourced from <a href="{{ post.sourced_from }}" target="_blank">{{ post.sourced_from }}</a></p>
+                {% endif %}
                 <div class="row">
 
                     <div class="col-1">
