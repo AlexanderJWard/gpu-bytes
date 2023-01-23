@@ -321,7 +321,9 @@ body {
 /* empty posts and gpus */
 
 .empty-gpu,
-.empty-post {
+.empty-post,
+.add-gpu,
+.add-post {
     font-family: 'Quicksand', sans-serif;
     font-size: 30px; 
 }
