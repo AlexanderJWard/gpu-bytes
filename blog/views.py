@@ -101,7 +101,7 @@ class GPUList(ListView):
     model = GPU
     template_name = "gpu.html"
     paginate_by = 8
-    queryset = GPU.objects.filter(status=1).order_by("gpu_brand","-date_released")
+    queryset = GPU.objects.filter(status=1).order_by("-date_released")
 
 
 @method_decorator(login_required(login_url='/accounts/login/'), name='dispatch')
