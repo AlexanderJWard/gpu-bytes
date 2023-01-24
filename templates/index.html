@@ -97,10 +97,14 @@
         <ul class="pagination justify-content-center mt-3 fan-spin">
             {% if page_obj.has_previous %}
             <li class="page-li btn-page"><a href="?page={{ page_obj.previous_page_number }}" class="page-link q-400">&laquo; PREV </a></li>
+            {% else %}
+            <li class="sr-only">No previous page</li>
             {% endif %}
-            <img src="{% static 'media/Fan.webp' %}" width="50" height="50" class="" alt="">
+            <li><img src="{% static 'media/Fan.webp' %}" width="50" height="50" class="" alt="Vector image of a computer fan"></li>
             {% if page_obj.has_next %}
             <li class="page-li btn-page"><a href="?page={{ page_obj.next_page_number }}" class="page-link q-400"> NEXT &raquo; </a></li>
+            {% else %}
+            <li class="sr-only">No next page</li>
             {% endif %}
         </ul>
     </nav>
