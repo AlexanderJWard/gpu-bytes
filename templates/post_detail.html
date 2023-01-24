@@ -1,21 +1,26 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
 {% load crispy_forms_tags %}
-
+<!-- Post detail -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
             <div class="col-md-12 masthead-text">
+                <!-- Display the title and author -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">Created by: {{ post.author }}</p>
             </div>
             <div class="col-md-12 masthead-image">
+                <!-- If an image isn't uploaded this placeholder image is used. -->
                 {% if "placeholder" in post.featured_image.url %}
-                {% load static %}
+                <!-- Photo by Sergei Starostin: https://www.pexels.com/photo/graphics-card-in-close-up-photography-6704945/ -->
                 <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.webp' %}" alt="Placeholder image of a GPU"></a>
                 {% else %}
+                <!-- If an image is uploaded then this is used instead of a placeholder -->
                 <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Featured image uploaded by the author"></a>
                 {% endif %}
             </div>
@@ -30,26 +35,33 @@
         <div class="col card mb-4  mt-3 left top">
             <div class="card-body p-0">
                 <p class="card-text">
+                    <!-- Post content -->
                     {{ post.content | linebreaks | safe }}
                 </p>
+                <!-- Only displayed if sourced_from is not empty -->
                 {% if post.sourced_from %}
                 <p class="post-link card-text">Image sourced from <a href="{{ post.sourced_from }}" target="_blank">{{ post.sourced_from }}</a></p>
                 {% endif %}
                 <div class="row">
                     <div class="col-12 mt-3">
                         <strong>
+                            <!-- If user is logged in show the like button as a form -->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
+                                <!-- If already liked show the icon red -->
                                 {% if liked %}
                                 <button aria-label="Unlike this post" type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i></button>
+                                <!-- If NOT already liked show the icon black -->
                                 {% else %}
                                 <button aria-label="Like this post" type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-fire-flame-curved mx-1"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
+                            <!-- If not logged in show the icon black -->
                             <span class="text-secondary"><i class="fa-solid fa-fire-flame-curved mx-1"></i></span>
                             {% endif %}
+                            <!-- Display total number of likes for the post -->
                         <span class="text-secondary pl-2">{{ post.number_of_likes }} </span>
                         </strong>
                     </div>
@@ -62,11 +74,14 @@
             <hr>
         </div>
     </div>
+    <!-- Comments section -->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
+            <!-- If only 1 comment exists display Comment as the h3 -->
             {% if comments.count == 1 %}
             <h3>{{ comments.count }} Comment:</h3>
             {% else %}
+            <!-- If either 0 or 2+ comments exist display Comments as the h3 -->
             <h3>{{ comments.count }} Comments:</h3>
             {% endif %}
             <div class="card-body">
@@ -79,11 +94,13 @@
                         </span> wrote:
                     </p>
                     {{ comment.body | linebreaks }}
+                    <!-- Display the users chosen current GPU. -->
                     <p>Current GPU: <strong>{{ comment.get_brand_display }}</strong></p>
                 </div>
                 {% endfor %}
             </div>
         </div>
+        <!-- Approval message if commented -->
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 {% if commented %}
@@ -91,6 +108,7 @@
                     Your comment is awaiting approval
                 </div>
                 {% else %}
+                <!-- If user is logged in and has not already commented let them leave a comment  -->
                 {% if user.is_authenticated %}
 
                 <h3>Leave a comment:</h3>

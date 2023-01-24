@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600&display=swap');
 
+/* generic */
+
 body {
     background-color: #fafaff;
 }
 
-.hide {
-    display: none;
-}
+/* animations */
 
 @keyframes rotate-fan {
     0% {
@@ -24,11 +24,6 @@ body {
 
 /* fonts */
 
-.ssp-400 {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
-}
-
 .q-400 {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
@@ -38,49 +33,25 @@ body {
     font-size: 30px;
 }
 
-.fs-20 {
-    font-size: 20px;
+/* colors */
+
+.btn-outline-success {
+    border-color: #76b900;
 }
 
-/* background colors */
-
-.darkblue-bg {
-    background-color: #0068b5
-}
-
-.lightblue-bg {
-    background-color: #00a3f6;
-}
-
-.green-bg {
+.btn-outline-success:hover {
     background-color: #76b900;
 }
 
-.red-bg {
+.btn-outline-danger {
+    border-color: #bd0000;
+}
+
+.btn-outline-danger:hover {
     background-color: #bd0000;
 }
 
-.ghostwhite-bg {
-    background-color: #fafaff;
-}
-
-.gray-bg {
-    background-color: #777777;
-}
-
 /* text colors */
-
-.darkblue-tx {
-    color: #0068b5
-}
-
-.ghostwhite-tx {
-    color: #fafaff;
-}
-
-.gray-tx {
-    color: #777777;
-}
 
 .red-tx {
     color: #bd0000;;
@@ -359,6 +330,10 @@ footer p {
     color: #000;
 }
 
+.crud-btns button {
+    margin: 0 .4rem 0 .4rem;
+}
+
 .gpu-link a,
 .post-link a {
     text-decoration: none;
@@ -459,6 +434,16 @@ footer p {
         padding-bottom: 1rem;
     }
 
+    /* post and gpu detail */
+
+    .crud-btns {
+        flex-direction: column;
+    }
+
+    .crud-btns button {
+        margin: .4rem 0 .4rem 0;
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -477,10 +462,19 @@ footer p {
         object-fit: cover;
     }
 
+    /* gpu and post detail */
+
+    .crud-btns {
+        flex-direction: row;
+    }
+
+    .crud-btns button {
+        margin: 0 .4rem 0 .4rem;
+    }
+
 }
 
 @media screen and (max-width: 425px) {
-
 
     /* account templates */
 

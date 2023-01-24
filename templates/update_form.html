@@ -3,16 +3,12 @@
 {% load static crispy_forms_tags %}
 
 {% block content %}
-
+<!-- Update form for GPU and posts -->
 <div class="container-fluid">
-
     <h1 class="my-5 q-400">Update Record:</h1>
-
     <form method="POST" class="q-400" action="" enctype="multipart/form-data">
         {% csrf_token %}
- 
         {{ form | crispy }}
-        
         <button aria-label="Submit changes" type="submit" class="btn btn-outline-success form-btn">Update</button>
     </form>
 

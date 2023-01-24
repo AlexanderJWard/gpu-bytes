@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% load static %}
 
+{% block content %}
+<!-- 404 error page -->
 <div class="container">
     <div class="card-container">
         <div class="col-12 text-center q-400 error-parent">
             <h1 class="error-title">404</h1>
             <h2 class="error-text"><i class="fa-solid fa-robot"></i> The page your looking for doesn't exist.</h2>
             <br>
-            <button aria_label="Return to home page" type="button" class="btn btn-outline-dark error-btn"><a class="card-link" href="{% url 'home' %}">Return Home</a></button>
+            <button aria_label="Return to home page" type="button" class="btn btn-outline-dark error-btn"><a
+                    class="card-link" href="{% url 'home' %}">Return Home</a></button>
         </div>
     </div>
 </div>

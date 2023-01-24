@@ -3,9 +3,8 @@
 {% load static crispy_forms_tags %}
 
 {% block content %}
-
+<!-- Add post form -->
 <div class="container-fluid">
-
     <form method="post" style="margin-top: 1.3em;" action="{% url 'add_post' %}" enctype="multipart/form-data">
         {{ form | crispy }}
         {% csrf_token %}

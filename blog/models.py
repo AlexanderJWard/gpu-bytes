@@ -34,6 +34,7 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+    # Save function taken from https://www.benchatronics.com/detail/how-to-use-slug-and-populate-slug-outsude-django-admin
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         return super(Post, self).save(*args, **kwargs)
@@ -62,11 +63,10 @@ class GPU(models.Model):
     def __str__(self):
         return self.name
 
+    # Save function taken from https://www.benchatronics.com/detail/how-to-use-slug-and-populate-slug-outsude-django-admin
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         return super(GPU, self).save(*args, **kwargs)
-
-    # https://www.benchatronics.com/detail/how-to-use-slug-and-populate-slug-outsude-django-admin
 
 
 class Comment(models.Model):

@@ -3,19 +3,24 @@
 {% load static %}
 
 {% block content %}
-
+<!-- GPU list page -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 left">
+            <!-- Dropdown menu accessible by everyone -->
             <div class="mt-2">
-                <button type="button" aria-label="Dropdown menu to change view between amd, nvidia and admin" class="btn btn-outline-dark filter-btn" data-toggle="dropdown"
-                    aria-expanded="false">
+                <button type="button" aria-label="Dropdown menu to change view between amd, nvidia and admin"
+                    class="btn btn-outline-dark filter-btn" data-toggle="dropdown" aria-expanded="false">
                     Sort By <i class="pl-2 fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="dropdown-menu filter-menu">
+                    <!-- Link to a view including both nvidia and amd GPUs -->
                     <a class="dropdown-item" href="{% url 'gpu' %}">View All</a>
+                    <!-- Link to a view just showing amd GPUs -->
                     <a class="dropdown-item" href="{% url 'amd' %}">AMD</a>
+                    <!-- Link to a view just showing nvidia GPUs -->
                     <a class="dropdown-item" href="{% url 'nvidia' %}">NVIDIA</a>
+                    <!-- If user is a superuser link a view including nvidia, amd, and drafts -->
                     {% if user.is_superuser %}
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item filter-admin" href="{% url 'gpu_admin' %}">ADMIN</a>
@@ -23,71 +28,93 @@
                 </div>
             </div>
             <div class="row card-border mt-2">
+                <!-- Each GPU takes 1/4 screen width -->
                 {% for post in gpu_list %}
                 <div class="col-12 col-md-3 card-parent">
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container" id="gpu-list">
+                                <!-- If an image isn't uploaded this placeholder image is used. -->
+                                <!-- The image links open the GPU when clicked -->
                                 {% if "placeholder" in post.image.url %}
+                                <!-- Photo by Sergei Starostin: https://www.pexels.com/photo/graphics-card-in-close-up-photography-6704945/ -->
                                 <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
-                                        src=" {% static 'media/Placeholder.webp' %}" alt="Placeholder image of a GPU"></a>
+                                        src=" {% static 'media/Placeholder.webp' %}"
+                                        alt="Placeholder image of a GPU"></a>
                                 {% else %}
+                                <!-- If an image is uploaded then this is used instead of a placeholder -->
                                 <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
                                         src=" {{ post.image.url }}" alt="Featured image uploaded by author"></a>
                                 {% endif %}
+                                <!-- If the post is a draft then this image is overlaid -->
                                 {% if post.status == 0 %}
                                 <div class="card-img-overlay">
                                     <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
-                                            src=" {% static 'media/Draft.webp' %}" alt="Transparent draft overlay image"></a>
+                                            src=" {% static 'media/Draft.webp' %}"
+                                            alt="Transparent draft overlay image"></a>
                                 </div>
                                 {% endif %}
                             </div>
+                            <!-- The following title and text links open the GPU when clicked -->
                             <a href="{% url 'gpu_detail' post.slug %}" class="post-link">
                                 <h3 class="card-title mt-2">{{ post.get_gpu_brand_display }} {{ post.name }}</h3>
                                 <p class="card-text">Released on {{ post.date_released }}</p>
                             </a>
+                            <!-- If user is logged in as a superuser show EDIT and DELETE buttons -->
                             {% if user.is_superuser %}
-                            <div class="d-flex mt-2">
-                                <button aria-label="Edit a GPU" type="button" class="btn btn-outline-success edit-btn mr-2"><a class="card-link"
+                            <div class="crud-btns d-flex mt-2">
+                                <!-- Edit button opens a form with existing GPU data to edit -->
+                                <button aria-label="Edit a GPU" type="button"
+                                    class="btn btn-outline-success edit-btn"><a class="card-link"
                                         href="{% url 'update_gpu' post.slug %}"><i
-                                            class="mr-2 gray-bg fa-solid fa-pencil"></i>EDIT</a></button>
-                                <button aria-label="Delete a GPU" type="button" class="btn btn-outline-danger edit-btn ml-2"><a class="card-link"
+                                            class="mr-2 fa-solid fa-pencil"></i>EDIT</a></button>
+                                <!-- Delete button opens a confirmation page for deletion -->
+                                <button aria-label="Delete a GPU" type="button"
+                                    class="btn btn-outline-danger edit-btn"><a class="card-link"
                                         href="{% url 'delete_gpu' post.slug %}"><i
-                                            class="mr-2 gray-bg fa-solid fa-trash-can"></i>DELETE</a></button>
+                                            class="mr-2 fa-solid fa-trash-can"></i>DELETE</a></button>
                             </div>
                             {% endif %}
                         </div>
                     </div>
                 </div>
+                <!-- Once four posts are displayed create a new row -->
                 {% if forloop.counter|divisibleby:4 %}
             </div>
             <div class="row card-border mt-3">
                 {% endif %}
+                <!-- ADD GPU button appears after the last GPU if user is a superuser -->
                 {% if forloop.last %}
+                {% if user.is_superuser %}
                 <div class="col-12 col-md-3 px-0 card-parent d-flex align-items-center justify-content-center">
                     <div class="card mb-4">
                         <div class="card-body d-flex flex-column align-items-center">
-                            {% if user.is_superuser %}
                             <p class="add-gpu">Add a GPU</p>
-                            <button aria-label="Add a GPU" type="button" class="btn btn-outline-success add-btn"><a class=""
-                                    href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a GPU</span></a></button>
-                            {% endif %}
+                            <!-- Link opens an empty form to create a new GPU -->
+                            <button aria-label="Add a GPU" type="button" class="btn btn-outline-success add-btn"><a
+                                    class="" href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i><span
+                                        class="sr-only">Add a GPU</span></a></button>
                         </div>
                     </div>
                 </div>
                 {% endif %}
+                {% endif %}
+                <!-- If there are no GPUs and user is superadmin -->
                 {% empty %}
                 {% if user.is_superuser %}
                 <div class="col-12 d-flex align-items-center justify-content-center flex-column">
-                    <p class="empty-gpu my-5">No GPUs Found</p>
+                    <p class="empty-gpu my-5">No GPUs Found. Add a GPU</p>
+                    <!-- Show the add GPU link -->
                     <button aria-label="Add a GPU" type="button" class="btn btn-outline-success add-btn"><a class=""
-                            href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a GPU</span></a></button>
+                            href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a
+                                GPU</span></a></button>
                 </div>
+                <!-- If anything other than superadmin display No Posts Found and a link to the home page -->
                 {% else %}
                 <div class="col-12 d-flex align-items-center justify-content-center flex-column">
                     <p class="empty-gpu my-5">No GPUs Found</p>
-                    <button aria-label="Return to the home page" type="button" class="btn btn-outline-dark empty-btn"><a class=""
-                            href="{% url 'home' %}">Return Home</a></button>
+                    <button aria-label="Return to the home page" type="button" class="btn btn-outline-dark empty-btn"><a
+                            class="" href="{% url 'home' %}">Return Home</a></button>
                 </div>
                 {% endif %}
                 {% endfor %}
@@ -96,7 +123,7 @@
     </div>
 
 
-
+    <!-- If page is paginated display the relevant next and previous buttons -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center mt-3 fan-spin">
@@ -106,7 +133,8 @@
             {% else %}
             <li class="sr-only">No previous page</li>
             {% endif %}
-            <li><img src="{% static 'media/Fan.webp' %}" width="50" height="50" class="" alt="Vector image of a computer fan"></li>
+            <li><img src="{% static 'media/Fan.webp' %}" width="50" height="50" class=""
+                    alt="Vector image of a computer fan"></li>
             {% if page_obj.has_next %}
             <li class="page-li btn-page"><a href="?page={{ page_obj.next_page_number }}" class="page-link q-400"> NEXT
                     &raquo; </a></li>

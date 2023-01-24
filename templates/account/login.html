@@ -8,9 +8,10 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
+<!-- Account page for login -->
 <div class="row">
   <!-- Used inline style here to hide my Cloudinary information for security reasons -->
+  <!-- Photo by Dave Morgan: https://www.pexels.com/photo/computer-exhaust-fan-2643596/ -->
   <div class="col-md-7 account-image" style="background-image: url('{% static 'media/LoginImage.webp' %}')"></div>
   <div class="col-md-5 d-flex flex-column">
     <div class="pl-4 account-text">
@@ -29,7 +30,5 @@
     </div>
   </div>
 </div>
-
-<!-- Photo by Dave Morgan: https://www.pexels.com/photo/computer-exhaust-fan-2643596/ -->
 
 {% endblock %}
