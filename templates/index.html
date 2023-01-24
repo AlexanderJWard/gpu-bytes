@@ -57,8 +57,7 @@
                             </a>
                             <p class="card-text">{{ post.created_on}}</p>
                             <!-- Display number of likes -->
-                            <p class="card-text"><i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i><strong> {{
-                                    post.number_of_likes }}</strong></p>
+                            <p class="card-text"><i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i><strong> {{ post.number_of_likes }}</strong></p>
                             <!-- If user is logged in as a superuser show EDIT and DELETE buttons -->
                             {% if user.is_superuser %}
                             <div class="d-flex mt-2">
