@@ -28,14 +28,14 @@
                             <div class="image-container" id="post-list">
                                 {% if "placeholder" in post.featured_image.url %}
                                 <!-- Photo by Sergei Starostin: https://www.pexels.com/photo/graphics-card-in-close-up-photography-6704945/ -->
-                                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %} " alt="Placeholder image of a GPU"></a>
+                                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.webp' %} " alt="Placeholder image of a GPU"></a>
                                 {% else %}
                                 <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Featured image uploaded by the author"></a>
                                 {% endif %}
                                 {% if post.status == 0 %}
                                 <div class="card-img-overlay">
                                     <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top"
-                                            src=" {% static 'media/Draft.jpg' %}" alt="Transparent draft image overlay"></a>
+                                            src=" {% static 'media/Draft.webp' %}" alt="Transparent draft image overlay"></a>
                                 </div>
                                 {% endif %}
                             </div>

@@ -30,7 +30,7 @@
                             <div class="image-container" id="gpu-list">
                                 {% if "placeholder" in post.image.url %}
                                 <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
-                                        src=" {% static 'media/Placeholder.jpg' %}" alt="Placeholder image of a GPU"></a>
+                                        src=" {% static 'media/Placeholder.webp' %}" alt="Placeholder image of a GPU"></a>
                                 {% else %}
                                 <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
                                         src=" {{ post.image.url }}" alt="Featured image uploaded by author"></a>
@@ -38,7 +38,7 @@
                                 {% if post.status == 0 %}
                                 <div class="card-img-overlay">
                                     <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
-                                            src=" {% static 'media/Draft.jpg' %}" alt="Transparent draft overlay image"></a>
+                                            src=" {% static 'media/Draft.webp' %}" alt="Transparent draft overlay image"></a>
                                 </div>
                                 {% endif %}
                             </div>

@@ -15,7 +15,7 @@
             <div class="col-md-12 masthead-image">
                 {% if "placeholder" in gpu.image.url %}
                 <img class="card-img-top" alt="A comptuer graphics processing chip."
-                    src="{% static 'media/Placeholder.jpg' %}" />
+                    src="{% static 'media/Placeholder.webp' %}" />
                 {% else %}
                 <img class="card-img-top" alt="A picture of the {{gpu.name}} chip." src=" {{ gpu.image.url }}" />
                 {% endif %}

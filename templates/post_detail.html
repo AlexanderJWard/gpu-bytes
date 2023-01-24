@@ -14,7 +14,7 @@
             <div class="col-md-12 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
                 {% load static %}
-                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %}" alt="Placeholder image of a GPU"></a>
+                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.webp' %}" alt="Placeholder image of a GPU"></a>
                 {% else %}
                 <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Featured image uploaded by the author"></a>
                 {% endif %}
