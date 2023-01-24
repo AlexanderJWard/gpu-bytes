@@ -48,7 +48,7 @@
                 <p class="gpu-text">{{ gpu.specs | linebreaks | safe }}</p>
                 {% endif %}
                 {% if gpu.sourced_from %}
-                <p class="gpu-text">Content and image sourced from <a href="{{ gpu.sourced_from }}" target="_blank">{{ gpu.sourced_from }}</a></p>
+                <p class="gpu-text gpu-link">Content and image sourced from <a href="{{ gpu.sourced_from }}" target="_blank">{{ gpu.sourced_from }}</a></p>
                 {% endif %}
             </div>
         </div>

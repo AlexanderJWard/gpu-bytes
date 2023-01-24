@@ -33,7 +33,7 @@
                     {{ post.content | linebreaks | safe }}
                 </p>
                 {% if post.sourced_from %}
-                <p class="card-text">Image sourced from <a href="{{ post.sourced_from }}" target="_blank">{{ post.sourced_from }}</a></p>
+                <p class="post-link card-text">Image sourced from <a href="{{ post.sourced_from }}" target="_blank">{{ post.sourced_from }}</a></p>
                 {% endif %}
                 <div class="row">
                     <div class="col-12 mt-3">
