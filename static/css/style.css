@@ -135,6 +135,12 @@ body {
     font-weight: bold;
 }
 
+/* footer */
+
+footer p {
+    color: #000;
+}
+
 /* page navigation */
 
 .page-ul, .page-li {
@@ -176,6 +182,13 @@ body {
 #post-list .card-img-top {
     width: 100%;
     height: 18vw;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.masthead-image .card-img-top {
+    width: 100%;
+    height: 40vw;
     object-fit: cover;
     object-position: bottom;
 }
@@ -348,9 +361,13 @@ body {
     color: #000;
 }
 
-.masthead-image {
+/* .masthead-image {
     width: 100%;
-}
+    height: 60vh;
+    object-fit: cover;
+    overflow: hidden;
+
+} */
 
 .btn-like {
     border: 1px solid transparent;
@@ -440,14 +457,6 @@ body {
         padding-bottom: 1rem;
     }
 
-    /* blog post card and gpu card */
-
-    .masthead-image {
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-    }
-
 }
 
 @media screen and (max-width: 767px) {
@@ -459,7 +468,8 @@ body {
     }
 
     #gpu-list .card-img-top,
-    #post-list .card-img-top {
+    #post-list .card-img-top,
+    .masthead-image .card-img-top {
         width: 100%;
         height: 50vw;
         object-fit: cover;
@@ -484,5 +494,4 @@ body {
         font-size: 30px;
         font-weight: bold;
     }
-
 }

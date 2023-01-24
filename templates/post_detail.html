@@ -11,12 +11,12 @@
                 <h1 class="post-title">{{ post.title }}</h1>
                 <p class="post-subtitle">Created by: {{ post.author }}</p>
             </div>
-            <div class="d-none d-md-block col-md-12 masthead-image">
+            <div class="col-md-12 masthead-image">
                 {% if "placeholder" in post.featured_image.url %}
                 {% load static %}
-                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %}"></a>
+                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {% static 'media/Placeholder.jpg' %}" alt="Placeholder image of a GPU"></a>
                 {% else %}
-                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {{ post.featured_image.url }}"></a>
+                <a href="{% url 'post_detail' post.slug %}"><img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Featured image uploaded by the author"></a>
                 {% endif %}
             </div>
             <p class="post-subtitle pl-3 pt-3">
@@ -42,9 +42,9 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i></button>
+                                <button aria-label="Unlike this post" type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i></button>
                                 {% else %}
-                                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-fire-flame-curved mx-1"></i></button>
+                                <button aria-label="Like this post" type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i class="fa-solid fa-fire-flame-curved mx-1"></i></button>
                                 {% endif %}
                             </form>
                             {% else %}
@@ -98,7 +98,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    <button aria-label="Submit your comment" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %}
                 {% endif %}

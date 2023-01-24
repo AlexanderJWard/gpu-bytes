@@ -11,8 +11,8 @@
         {% csrf_token %}
         <div class="col-12 d-flex align-items-center justify-content-center flex-wrap del-parent">
             <p class="q-400 fs-30 my-5 del-p">Are you sure you want to delete {{ gpu.get_gpu_brand_display }} {{ gpu.name }} ?</p>
-            <button type="submit" class="mx-2 px-5 btn btn-outline-success my-2 del-btn del-btn-y">YES</button>
-            <button type="button" class="mx-2 px-5 btn btn-outline-danger my-2 del-btn del-btn-n"><a class="" href="{% url 'gpu' %}">NO</a></button>
+            <button aria-label="Confirmation to delete the GPU" type="submit" class="mx-2 px-5 btn btn-outline-success my-2 del-btn del-btn-y">YES</button>
+            <button aria-label="Return home" type="button" class="mx-2 px-5 btn btn-outline-danger my-2 del-btn del-btn-n"><a class="" href="{% url 'gpu' %}">NO</a></button>
         </div>
     </form>
 
