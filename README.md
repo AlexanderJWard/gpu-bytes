@@ -42,6 +42,9 @@ I created my User Stories on GitHub using the Issue section and a custom templat
 GitHub Issues: __https://github.com/AlexanderJWard/gpu-bytes/issues__ \
 GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 
+Here is my User Story template in GitHub:
+![image](https://user-images.githubusercontent.com/102811792/214451470-9b573ce0-76c7-41ad-987c-968ee5a3c9d5.png)
+
 1. As a **Site User** I can **view a list of GPU blog posts** so that **I can choose what GPU news and information to read**
 2. As a **Site User** I can **click on a GPU blog post** so that **I can see the selected GPU blog post text contents**
 3. As a **Site User** I can **sign up for an account** so that **I can like and comment on GPU blog posts, NVIDIA cards and AMD cards**
