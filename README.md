@@ -33,9 +33,11 @@ My main choice with the colors was to go with strong contrasting black and white
 My two fonts work well together and complement each other as both are sans-serif fonts. For the titles and headers, I used Quicksand which is a modern-looking font without sharp edges and is very easy to read. The second font is Source Sans Pro which I used for content text and GPU specs. Source Sans Pro works well with Quicksand and suits the overall design choice.
 
 ![image](https://user-images.githubusercontent.com/102811792/214450549-bf1ef833-f4d8-4309-9c87-c5eddfb1a3a0.png)
+
 https://fonts.google.com/specimen/Quicksand
 
 ![image](https://user-images.githubusercontent.com/102811792/214450483-e0617bd1-248f-451d-829b-c4e1e5afa558.png)
+
 https://fonts.google.com/specimen/Source+Sans+Pro
 
 ### Images
@@ -74,10 +76,10 @@ I made custom changes to some of the bootstrap classes in my __style.css__ file 
 
 ### Wireframes
 
-#### Basic View
+#### Basic View - Not logged in
 ![image](https://user-images.githubusercontent.com/102811792/214549349-610f6538-cad0-4d02-899f-f5365085a029.png)
 
-#### Mobile View
+#### Mobile View - Mix of not logged in and as admin
 ![image](https://user-images.githubusercontent.com/102811792/214546987-239a6a2a-3ab2-43e2-a03b-f488aa0e3b1c.png)
 
 #### Tablet View as admin (C.R.U.D)
@@ -86,24 +88,28 @@ I made custom changes to some of the bootstrap classes in my __style.css__ file 
 #### GPU List View as admin (C.R.U.D)
 ![image](https://user-images.githubusercontent.com/102811792/214547133-488e6098-ce5e-4326-bac7-64a7f53438e3.png)
 
-#### GPU detail
+#### GPU detail - general user logged in
 ![image](https://user-images.githubusercontent.com/102811792/214547245-3148d585-9ef4-416b-a339-eebcf97ec08b.png)
 
-#### Blog detail
+#### Blog detail - general user logged in
 ![image](https://user-images.githubusercontent.com/102811792/214547291-40afd0af-c44d-4455-b6f9-aa22d66110df.png)
 
-#### Confirm delete
+#### Confirm delete as admin
 ![image](https://user-images.githubusercontent.com/102811792/214547398-e4432522-cd90-49ed-a0fc-8fa35d34c65f.png)
 
-#### Edit & Create Form
+#### Edit & Create Form as admin
 ![image](https://user-images.githubusercontent.com/102811792/214547480-5a811a64-1248-4b6a-bbf6-708b36eaa347.png)
 
+- Admin users can see the Admin navigation button to take them to the Django admin console. They can also see an admin section of the dropdown menu in the GPU list view which displays all GPUs including drafts.
 
+# Information Architecture
+
+## Entity Relationship Diagram
 
 ## User Stories
 I created my User Stories on GitHub using the Issue section and a custom template. After the User Stories were created I connected them into a GitHub project KanBan board. Here are the links for both Issues and Project.
 
-GitHub Issues: __https://github.com/AlexanderJWard/gpu-bytes/issues__ \
+GitHub Issues: __https://github.com/AlexanderJWard/gpu-bytes/issues__
 GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 
 Here is my User Story template in GitHub:
@@ -127,9 +133,6 @@ Here is my User Story template in GitHub:
 16. As a **Site User** I can **view a paginated list of posts** so that **posts are easily viewed**
 
 ## Design
-
-
-
 
 ## Data Models
 
