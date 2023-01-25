@@ -106,14 +106,97 @@ I made custom changes to some of the bootstrap classes in my __style.css__ file 
 
 ## Entity Relationship Diagram
 
+![ERD](https://user-images.githubusercontent.com/102811792/214671212-17b40606-6343-4a01-b710-eb325c75af23.png)
+
+## Database Choice
+
+The database of choice is postgres because the data is relational and heroku manages this easily with a low cost.
+
+## Data Models
+
+### Post Model
+
+Model taken from the I think therefore I blog Code Institute example blog, excluding the sourced from field.
+
+- [x] Create - Admin Users can create new blog posts
+- [x] Read - Site Users can view blog posts 
+- [x] Update - Admin Users can update blog posts
+- [x] Delete - Admin Users can delete blog posts
+
+| Key          | Name           | Type             |
+|--------------|----------------|------------------|
+|              | Title          | CharField[200]   |
+| ForeignKey   | Author         | User Model       |
+|              | Created Date   | DateTime         |
+|              | Updated Date   | DateTime         |
+|              | Content        | TextField        |
+|              | Featured Image | Cloudinary Image |
+|              | Excerpt        | TextField        |
+| Many to Many | Likes          | User Model       |
+|              | Slug (unique)  | SlugField        |
+|              | Status         | Integer          |
+|              | Sourced From   | URLField         |
+
+### Comment Model
+
+Model taken from the I think therefore I blog Code Institute example blog, excluding brand field
+
+- [x] Create - Registered Users can create a new comment
+- [x] Read - Site Users can view all comments
+- [ ] Update - Currently no user update function on this table
+- [ ] Delete - Currently no user delete function on this table. Admin can delete comments in Django admin console
+
+| Key          | Name           | Type             |
+|--------------|----------------|------------------|
+| ForeignKey   | Post           | Post Model       |
+|              | Name           | CharField[80]    |
+|              | Email          | EmailField       |
+|              | Body           | TextField        |
+|              | Created On     | DateTimeField    |
+|              | Approved       | BooleanField     |
+|              | Brand          | Integer          |
+
+### GPU Model
+
+- [x] Create - Admin Users can create new GPUs
+- [x] Read - Site Users can view GPUs and filter them
+- [x] Update - Admin Users can update GPUS
+- [x] Delete - Admin Users can delete GPUs
+
+| Key          | Name           | Type             |
+|--------------|----------------|------------------|
+|              | Name           | CharField[200]   |
+|              | GPU Brand      | Integer          |
+|              | Created On     | DateTime         |
+|              | Updated On     | DateTime         |
+|              | Content        | TextField        |
+|              | Image          | Cloudinary Image |
+|              | Memory Size    | Integer          |
+|              | Memory Type    | CharField[10]    |
+|              | Base Clock     | SmallInteger     |
+|              | Boost Clock    | SmallInteger     |
+|              | Other Specs    | TextField        |
+|              | Date Released  | DateField        |
+|              | Slug (unique)  | SlugField        |
+|              | Status         | Integer          |
+|              | Sourced From   | URLField         |
+
+## CRUD Diagrams
+
+TO BE ADDED IF TIME
+
+# Agile Process
+
+## Project Goals
+
+- Registered users can interact with other users by leaving comments and liking posts they enjoy.
+- Admin users can create new blog posts and add the latest GPUs with related specs.
+- Admin users can modify existing posts and GPUs to update information that may have changed.
+- Admin users can delete existing posts and GPUs to remove them from the database.
+- Users can read and enjoy blog posts on various topics.
+- Users can easily view and learn about GPUs and what specs they have.
+
 ## User Stories
-I created my User Stories on GitHub using the Issue section and a custom template. After the User Stories were created I connected them into a GitHub project KanBan board. Here are the links for both Issues and Project.
-
-GitHub Issues: __https://github.com/AlexanderJWard/gpu-bytes/issues__
-GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
-
-Here is my User Story template in GitHub:
-![image](https://user-images.githubusercontent.com/102811792/214451470-9b573ce0-76c7-41ad-987c-968ee5a3c9d5.png)
 
 1. As a **Site User** I can **view a list of GPU blog posts** so that **I can choose what GPU news and information to read**
 2. As a **Site User** I can **click on a GPU blog post** so that **I can see the selected GPU blog post text contents**
@@ -132,45 +215,113 @@ Here is my User Story template in GitHub:
 15. As a **Site Admin** I can **create draft posts** so that **I can finish writing the content later**
 16. As a **Site User** I can **view a paginated list of posts** so that **posts are easily viewed**
 
-## Design
+## Feasibility vs Importance
 
-## Data Models
+TO BE ADDED IF TIME
 
-### Blog Post
+## Scope
 
-- [ ] Create - Admin Users can create new blog posts
-- [x] Read - Site Users can view blog posts 
-- [ ] Update - Admin Users can update blog posts
-- [ ] Delete - Admin Users can delete blog posts
+TO BE ADDED IF TIME
 
-| Key          | Name           | Type             |
-|--------------|----------------|------------------|
-|              | Title          | CharField[200]   |
-| ForeignKey   | Author         | User Model       |
-|              | Created Date   | DateTime         |
-|              | Updated Date   | DateTime         |
-|              | Content        | TextField        |
-|              | Featured Image | Cloudinary Image |
-|              | Excerpt        | TextField        |
-| Many to Many | Likes          | User Model       |
-|              | Slug (unique)  | SlugField        |
-|              | Status         | Integer          |
-|              | Sourced From   | URLField         |
+## Agile Tool
 
-### Comment
+I created my User Stories on GitHub using the Issue section and a custom template. After the User Stories were created I connected them into a GitHub project KanBan board. Here are the links for both Issues and Project.
 
-- [x] Create - Registered Users can create a new comment
-- [x] Read - Site Users can view all comments
-- [x] Update - Registered Users can update a comment they created
-- [x] Delete - Registered Users can delete a comment they created
+GitHub Issues: __https://github.com/AlexanderJWard/gpu-bytes/issues__
+GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 
-| Key          | Name           | Type             |
-|--------------|----------------|------------------|
-| ForeignKey   | Post           | Post Model       |
-|              | Name           | CharField[80]    |
-|              | Email          | EmailField       |
-|              | Body           | TextField        |
-|              | Created On     | DateTimeField    |
-|              | Approved       | BooleanField     |
+### User Story Example
+
+Here is my User Story template in GitHub:
+![image](https://user-images.githubusercontent.com/102811792/214451470-9b573ce0-76c7-41ad-987c-968ee5a3c9d5.png)
+
+### Epic Stories
+
+TO BE ADDED IF TIME
+
+# Features
+
+## Implemented Features
+
+### Header
+
+The header has different navigation buttons based on what type of user is logged in or if the user is not authenticated. This allows all users to navigate through the site with ease. **Home** takes the user to the default Post List view, **GPUs** takes the user to the default GPU list view, **Admin** takes a superuser to the Django admin panel, **Register** takes an unauthenticated user to the custom sign up page, **Login** takes an unauthenticated user to the custom login page, **Logout** takes any authenticated user to the logout confirmation page.
+
+__Unauthenticated User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214690331-ad11c4d8-51e7-40fc-bedb-75914f265d62.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214692747-1ac760ff-ecb2-4c31-bf20-edc02143b8ac.png)
+
+__General Authenticated User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214690957-1a88a48c-c554-45f8-b344-cfed0ecfa6f8.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214692874-473560ca-92cd-4fbc-964d-b0e1899a9b0d.png)
+
+__Admin User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214690077-8c812ce2-6849-470f-8ccd-2e4be5d0d701.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214692962-a87acefc-d9da-41ae-ad5a-e34209722d41.png)
+
+### Footer
+
+__All Users__
+![image](https://user-images.githubusercontent.com/102811792/214691058-4b1ff706-a2d1-4e06-a287-54be16e669b1.png)
+
+Footer taken from I think therefore I blog CI example blog
+
+### Post List
+
+__General Authenticated User & Unauthenticated User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214691425-af1cf975-d9e3-43b8-9fea-2ad8e9ded376.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214694103-26608c90-34d8-430e-b8a9-040a436c0675.png)
+
+__Admin User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214691252-60363a78-a188-4ce8-9197-86f2ca505a26.png)
+
+- Mobile
+
+
+### GPU List
+
+__General Authenticated User & Unauthenticated User__
+![image](https://user-images.githubusercontent.com/102811792/214691749-9fd2ab87-f266-4a14-a0d1-886a1b447c42.png)
+
+__Admin User__
+![image](https://user-images.githubusercontent.com/102811792/214691637-425de9a4-786d-402f-b3fa-cc8deb1e6abd.png)
+
+### Post Detail
+
+__General Authenticated User & Unauthenticated User__
+
+__Admin User__
+
+- GPU Detail
+- Login
+- Logout
+- Signup
+- Update Record
+- Delete GPU
+- Delete Post
+- Create GPU
+- Create Post
+- Custom 404 Page
+- Custom 403 Page
+- Custom 500 Page
+
 
 
