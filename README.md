@@ -280,6 +280,8 @@ Footer taken from I think therefore I blog CI example blog
 
 ### Post List
 
+The default home page of the blog containing all the tech posts created by admin users. From here all users can open and view posts, admin users can click on the edit and delete buttons to take those actions for each post.
+
 __General Authenticated User & Unauthenticated User__
 
 - Desktop
@@ -290,38 +292,173 @@ __General Authenticated User & Unauthenticated User__
 
 __Admin User__
 
+- Admin Drop Down View
+
+As an admin user you can open the drop down menu and select **View All** which changes the view to show all posts including drafts which regular users won't be able to normally view.
+
+![image](https://user-images.githubusercontent.com/102811792/214697057-e0b7d394-f29b-458a-9838-f9643dc2a84e.png)
+![image](https://user-images.githubusercontent.com/102811792/214697118-bb75095c-fce3-45a8-ae6d-6793e577aed4.png)
+
 - Desktop
 ![image](https://user-images.githubusercontent.com/102811792/214691252-60363a78-a188-4ce8-9197-86f2ca505a26.png)
 
-- Mobile
+- Tablet
+![image](https://user-images.githubusercontent.com/102811792/214695834-66dd0720-5fa2-4ebf-b74d-33e7027e13c7.png)
 
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214696055-47c2be0c-999c-4b56-83c1-1261e9d50744.png)
 
 ### GPU List
 
+The GPU list shows all the graphics cards added by an admin user, these can be clicked and viewed by all users. Admin users can click the edit and delete buttons to complete the action for each GPU. All users can click the **Sort By** dropdown menu to change the view between **View All**, **AMD**, and **NVIDIA** which filters the view based on GPU.
+
 __General Authenticated User & Unauthenticated User__
+
+- Desktop
 ![image](https://user-images.githubusercontent.com/102811792/214691749-9fd2ab87-f266-4a14-a0d1-886a1b447c42.png)
 
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214699377-923a42ab-b437-438e-aea9-db64126f0d6b.png)
+
 __Admin User__
+
+- Admin Drop Down  View
+
+The admin user can see an **Admin** option in the drop down which shows all GPUs including drafts which regular user cannot view.
+
+![image](https://user-images.githubusercontent.com/102811792/214700574-d8fbdce7-4f28-4068-8624-3395acf3999d.png)
+![image](https://user-images.githubusercontent.com/102811792/214700755-8992b7df-b902-4b83-9eac-d5c2697abd6b.png)
+
+- Desktop
 ![image](https://user-images.githubusercontent.com/102811792/214691637-425de9a4-786d-402f-b3fa-cc8deb1e6abd.png)
+
+- Tablet
+![image](https://user-images.githubusercontent.com/102811792/214700408-71a7476c-d74a-47ed-ac18-c3677887f25d.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214700471-cfeb99c8-a8c7-4fca-95a8-67381bf5a1d0.png)
 
 ### Post Detail
 
-__General Authenticated User & Unauthenticated User__
+This is the post detail view when a user clicks on a post that shows the post image and content as well as letting authenticated users leave a comment and like the post.
+
+__Unauthenticated User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214700983-11feec39-bf2c-4f83-b6c3-8ee3384df0a7.png)
+![image](https://user-images.githubusercontent.com/102811792/214701078-10699a75-d6ce-4c49-8508-79fc4e14f8ef.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214701832-7f001209-f44d-42b7-be3f-53bd1f71cc86.png)
+![image](https://user-images.githubusercontent.com/102811792/214701908-1ba78d6e-cfc6-4404-91a0-c6a4eb8f8696.png)
+
+__Authenticated Users__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214701291-88e93f50-9ea7-42d5-b749-b139d608fd1a.png)
+![image](https://user-images.githubusercontent.com/102811792/214701360-0a18e2fc-b884-4803-b2a8-5bae1d95d4e5.png)
+![image](https://user-images.githubusercontent.com/102811792/214701425-452a36b8-5c04-4055-8c37-a529d537f678.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214701625-3a9c6345-13e5-479e-bd6c-223b618b565a.png)
+![image](https://user-images.githubusercontent.com/102811792/214701740-673bf3a8-5111-4164-9d2e-d97b5c3369c3.png)
+
+### GPU Detail
+
+This is the GPU detail view after a user clicks on a GPU that shows all related content and specs for that GPU.
+
+__All Users__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214703539-be66e364-9d84-472f-a686-39aa4e6c5290.png)
+![image](https://user-images.githubusercontent.com/102811792/214703593-ccf546ac-d600-4bea-b296-ea2202ef96b2.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214703681-0c750ca0-6182-4aef-b262-e2eb8dfcb18e.png)
+![image](https://user-images.githubusercontent.com/102811792/214703730-34931771-629a-4ad2-b043-e4d5b96e9742.png)
+
+### Login
+
+The login page that shows for all users who are not logged in, it allows them to enter a username and password.
+
+__Unauthenticated User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214703958-270994a1-56ab-4f18-b019-6a9f6274bdfc.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214704020-5daa091b-6d3e-45b7-9e3b-61a4f1d9174a.png)
+![image](https://user-images.githubusercontent.com/102811792/214704057-d3679995-1ba1-4f39-adb9-d20f9e92d4d0.png)
+
+### Logout
+
+The logout page shows for all authenticated users and is a confirmation page asking the user to press either yes or no to logout or be redirected to the home page.
+
+__Authenticated Users__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214704970-435e0e37-2389-4b0b-a3d3-582b54af738b.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214705042-756b9825-7af0-4e68-94c7-14259da70228.png)
+
+### Signup
+
+The signup page shows for all unauthenticated users, it allows them to register an account by creating a username, password then confirm the password.
+
+__Unauthenticated User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214705390-3e24544c-154b-4659-b527-a97fd1c519c7.png)
+
+- Mobile
+![image](https://user-images.githubusercontent.com/102811792/214705453-0979fc83-537f-400d-932e-2a9803e01931.png)
+![image](https://user-images.githubusercontent.com/102811792/214705483-ce5a76d0-1e17-4614-a47f-df152ee59f88.png)
+
+### Update Record
+
+The update record view for editing both post and GPU. This allows an admin to update each field and submit the changes to the database.
 
 __Admin User__
 
-- GPU Detail
-- Login
-- Logout
-- Signup
-- Update Record
-- Delete GPU
-- Delete Post
-- Create GPU
-- Create Post
-- Custom 404 Page
-- Custom 403 Page
-- Custom 500 Page
+- Desktop (Post)
+![image](https://user-images.githubusercontent.com/102811792/214706139-b4618331-64aa-46ec-b98f-f925bd26bf67.png)
+![image](https://user-images.githubusercontent.com/102811792/214706187-bc24dbf4-780d-43f8-97ed-9ec54401df5b.png)
+
+- Desktop (GPU)
+![image](https://user-images.githubusercontent.com/102811792/214706312-e2250869-6b6f-47dc-8de7-4ce2e93402cd.png)
+![image](https://user-images.githubusercontent.com/102811792/214706389-95afcd5c-dd50-4e85-97c8-7db1a2fbce2e.png)
+![image](https://user-images.githubusercontent.com/102811792/214706446-0d92174f-a994-4886-97bc-8462a67a5317.png)
+
+### Delete GPU
+
+__Admin User__
+
+### Delete Post
+
+__Admin User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214707271-976b390a-41d7-4f30-b3b1-fdf76e0ab86e.png)
+
+### Create GPU
+
+__Admin User__
+
+### Create Post
+
+__Admin User__
+
+### Custom 404 Page
+
+
+- Desktop
+![Uploading image.png…]()
+
+### Custom 403 Page
+
+
+### Custom 500 Page
 
 
 
