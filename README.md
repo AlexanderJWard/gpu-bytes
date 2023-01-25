@@ -33,8 +33,72 @@ My main choice with the colors was to go with strong contrasting black and white
 My two fonts work well together and complement each other as both are sans-serif fonts. For the titles and headers, I used Quicksand which is a modern-looking font without sharp edges and is very easy to read. The second font is Source Sans Pro which I used for content text and GPU specs. Source Sans Pro works well with Quicksand and suits the overall design choice.
 
 ![image](https://user-images.githubusercontent.com/102811792/214450549-bf1ef833-f4d8-4309-9c87-c5eddfb1a3a0.png)
+https://fonts.google.com/specimen/Quicksand
 
 ![image](https://user-images.githubusercontent.com/102811792/214450483-e0617bd1-248f-451d-829b-c4e1e5afa558.png)
+https://fonts.google.com/specimen/Source+Sans+Pro
+
+### Images
+I used images such as computer fans and graphics cards to match the overall theme and design choice. Font Awesome icons were chosen because they best fit the buttons used. The pencil icon represents the ability to edit, trash can is perfect for the delete buttons. Fire icon represents leaving a like on the post.
+
+![image](https://user-images.githubusercontent.com/102811792/214524707-61c13506-60a2-4560-b727-e50b7ca5f026.png)
+
+![image](https://user-images.githubusercontent.com/102811792/214525580-bcf3e93b-5639-49fe-a666-339c51797d1f.png)
+
+### Design Elements
+
+> - buttons
+> - cards
+> - drop down menu
+> - desktop navigation
+> - mobile navigation
+> - footer
+> - textarea
+> - text input
+> - pagination
+> - images
+> - icons
+
+### Animations and Transactions
+TO BE ADDED IF TIME
+
+### Frameworks
+
+For my framework, I chose to use Boostrap as it's something I've started to learn and am most familiar with it. Fitting perfectly with my design elements the framework supports everything I require for this website.
+
+### Custom Styles
+
+I made custom changes to some of the bootstrap classes in my __style.css__ file located in __Static/CSS__ folder structure. I used CSS to change the color of btn-success and btn-warning so they match my chosen design colors. Further changes can be found in the aforementioned CSS file.
+
+![image](https://user-images.githubusercontent.com/102811792/214534235-e681b4d3-fc2a-4227-817a-a5450f09d0b9.png)
+
+### Wireframes
+
+#### Basic View
+![image](https://user-images.githubusercontent.com/102811792/214549349-610f6538-cad0-4d02-899f-f5365085a029.png)
+
+#### Mobile View
+![image](https://user-images.githubusercontent.com/102811792/214546987-239a6a2a-3ab2-43e2-a03b-f488aa0e3b1c.png)
+
+#### Tablet View as admin (C.R.U.D)
+![image](https://user-images.githubusercontent.com/102811792/214550675-51afe36d-5986-43ea-8425-8517d19b0e60.png)
+
+#### GPU List View as admin (C.R.U.D)
+![image](https://user-images.githubusercontent.com/102811792/214547133-488e6098-ce5e-4326-bac7-64a7f53438e3.png)
+
+#### GPU detail
+![image](https://user-images.githubusercontent.com/102811792/214547245-3148d585-9ef4-416b-a339-eebcf97ec08b.png)
+
+#### Blog detail
+![image](https://user-images.githubusercontent.com/102811792/214547291-40afd0af-c44d-4455-b6f9-aa22d66110df.png)
+
+#### Confirm delete
+![image](https://user-images.githubusercontent.com/102811792/214547398-e4432522-cd90-49ed-a0fc-8fa35d34c65f.png)
+
+#### Edit & Create Form
+![image](https://user-images.githubusercontent.com/102811792/214547480-5a811a64-1248-4b6a-bbf6-708b36eaa347.png)
+
+
 
 ## User Stories
 I created my User Stories on GitHub using the Issue section and a custom template. After the User Stories were created I connected them into a GitHub project KanBan board. Here are the links for both Issues and Project.
@@ -64,8 +128,6 @@ Here is my User Story template in GitHub:
 
 ## Design
 
-### Wireframes
-![GPU Bytes](https://user-images.githubusercontent.com/102811792/207378032-64592473-f19a-41ca-a864-ac54cb5e1818.png)
 
 
 
