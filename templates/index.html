@@ -60,15 +60,15 @@
                             <p class="card-text"><i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i><strong> {{ post.number_of_likes }}</strong></p>
                             <!-- If user is logged in as a superuser show EDIT and DELETE buttons -->
                             {% if user.is_superuser %}
-                            <div class="d-flex mt-2">
+                            <div class="mt-2 d-flex crud-btns">
                                 <!-- Edit button opens a form with existing post data to edit -->
                                 <button aria-label="Edit this post" type="button"
-                                    class="btn btn-outline-success edit-btn mr-2"><a class="card-link"
+                                    class="btn btn-outline-success edit-btn"><a class="card-link"
                                         href="{% url 'update_post' post.slug %}"><i
                                             class="mr-2 fa-solid fa-pencil"></i>EDIT</a></button>
                                 <!-- Delete button opens a confirmation page for deletion -->
                                 <button aria-label="Delete this post" type="button"
-                                    class="btn btn-outline-danger edit-btn ml-2"><a class="card-link"
+                                    class="btn btn-outline-danger edit-btn"><a class="card-link"
                                         href="{% url 'delete_post' post.slug %}"><i
                                             class="mr-2 fa-solid fa-trash-can"></i>DELETE</a></button>
                             </div>
