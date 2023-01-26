@@ -23,7 +23,7 @@
         {% endif %}
         <div class="d-flex">
           <button type="submit" class="signout-btn btn btn-outline-success">{% trans 'YES' %}</button>
-          <a aria_label="Return to home page" href="{% url 'home' %}" class="signout-btn btn btn-outline-danger">{% trans 'NO' %}</a>
+          <a href="{% url 'home' %}" class="signout-btn btn btn-outline-danger">{% trans 'NO' %}</a>
         </div>
       </form>
     </div>

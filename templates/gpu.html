@@ -64,9 +64,9 @@
                             {% if user.is_superuser %}
                             <div class="crud-btns d-flex mt-2">
                                 <!-- Edit link opens a form with existing GPU data to edit -->
-                                <a aria-label="Edit this gpu" class="btn btn-outline-success edit-btn" href="{% url 'update_gpu' post.slug %}"><i class="mr-2 fa-solid fa-pencil"></i>EDIT</a>
+                                <a class="btn btn-outline-success edit-btn" href="{% url 'update_gpu' post.slug %}"><i class="mr-2 fa-solid fa-pencil"></i>EDIT</a>
                                 <!-- Delete link opens a confirmation page for deletion -->
-                                <a aria-label="Delete this gpu" class="btn btn-outline-danger edit-btn" href="{% url 'delete_gpu' post.slug %}"><i class="mr-2 fa-solid fa-trash-can"></i>DELETE</a>
+                                <a class="btn btn-outline-danger edit-btn" href="{% url 'delete_gpu' post.slug %}"><i class="mr-2 fa-solid fa-trash-can"></i>DELETE</a>
                             </div>
                             {% endif %}
                         </div>
@@ -85,7 +85,7 @@
                         <div class="card-body d-flex flex-column align-items-center">
                             <p class="add-gpu">Add a GPU</p>
                             <!-- Link opens an empty form to create a new GPU -->
-                            <a aria-label="Add a gpu" class="btn btn-outline-success add-btn d-flex justify-content-center align-items-center" href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a gpu</span></a>
+                            <a class="btn btn-outline-success add-btn d-flex justify-content-center align-items-center" href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a gpu</span></a>
                         </div>
                     </div>
                 </div>
@@ -97,13 +97,13 @@
                 <div class="col-12 d-flex align-items-center justify-content-center flex-column">
                     <p class="empty-gpu my-5">No GPUs Found. Add a GPU</p>
                     <!-- Show the add GPU link -->
-                    <a aria-label="Add a gpu" class="btn btn-outline-success add-btn d-flex justify-content-center align-items-center" href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a gpu</span></a>
+                    <a class="btn btn-outline-success add-btn d-flex justify-content-center align-items-center" href="{% url 'add_gpu' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a gpu</span></a>
                 </div>
                 <!-- If anything other than superadmin display No Posts Found and a link to the home page -->
                 {% else %}
                 <div class="col-12 d-flex align-items-center justify-content-center flex-column">
                     <p class="empty-gpu my-5">No GPUs Found</p>
-                    <a aria-label="Return to the home page" class="btn btn-outline-dark empty-btn" href="{% url 'home' %}">Return Home</a>
+                    <a class="btn btn-outline-dark empty-btn" href="{% url 'home' %}">Return Home</a>
                 </div>
                 {% endif %}
                 {% endfor %}
