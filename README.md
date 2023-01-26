@@ -143,7 +143,7 @@ Model taken from the I think therefore I blog Code Institute example blog, exclu
 
 - [x] Create - Registered Users can create a new comment
 - [x] Read - Site Users can view all comments
-- [ ] Update - Currently no user update function on this table
+- [ ] Update - Currently no user update function on this table. Admin can update comments in Django admin console
 - [ ] Delete - Currently no user delete function on this table. Admin can delete comments in Django admin console
 
 | Key          | Name           | Type             |
@@ -217,11 +217,11 @@ TO BE ADDED IF TIME
 
 ## Feasibility vs Importance
 
-TO BE ADDED IF TIME
+TO DO IF TIME
 
-## Scope
+Here is a link to the feasibility diagram in Google Sheets:
 
-TO BE ADDED IF TIME
+https://docs.google.com/spreadsheets/d/1NIrvPL1cu9MP9QTzrYLARy_Gzi-X3ZY_tHXXHWq4XXw/edit?usp=sharing
 
 ## Agile Tool
 
@@ -234,10 +234,6 @@ GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 
 Here is my User Story template in GitHub:
 ![image](https://user-images.githubusercontent.com/102811792/214451470-9b573ce0-76c7-41ad-987c-968ee5a3c9d5.png)
-
-### Epic Stories
-
-TO BE ADDED IF TIME
 
 # Features
 
@@ -280,7 +276,7 @@ Footer taken from I think therefore I blog CI example blog
 
 ### Post List
 
-The default home page of the blog containing all the tech posts created by admin users. From here all users can open and view posts, admin users can click on the edit and delete buttons to take those actions for each post.
+The default home page of the blog containing all the tech posts created by admin users. From here all users can open and view posts, admin users can click on the edit and delete buttons to take those actions for each post. They can also click on the Add a Post button to create a new post in the database.
 
 __General Authenticated User & Unauthenticated User__
 
@@ -310,7 +306,7 @@ As an admin user you can open the drop down menu and select **View All** which c
 
 ### GPU List
 
-The GPU list shows all the graphics cards added by an admin user, these can be clicked and viewed by all users. Admin users can click the edit and delete buttons to complete the action for each GPU. All users can click the **Sort By** dropdown menu to change the view between **View All**, **AMD**, and **NVIDIA** which filters the view based on GPU.
+The GPU list shows all the graphics cards added by an admin user, these can be clicked and viewed by all users. Admin users can click the edit and delete buttons to complete the action for each GPU, there is also an Add GPU button to create a new entry in the database. All users can click the **Sort By** dropdown menu to change the view between **View All**, **AMD**, and **NVIDIA** which filters the view based on GPU.
 
 __General Authenticated User & Unauthenticated User__
 
@@ -432,9 +428,16 @@ __Admin User__
 
 ### Delete GPU
 
+The delete gpu view is a confirmation page to ensure the admin is positive they want to delete the gpu from the database.
+
 __Admin User__
 
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214708250-5f6f3f6b-ec02-4c16-8d7b-65eb9653ddb5.png)
+
 ### Delete Post
+
+The delete post view is a confirmation page to ensure the admin is positive they want to delete the post from the database.
 
 __Admin User__
 
@@ -443,22 +446,140 @@ __Admin User__
 
 ### Create GPU
 
+Create gpu view is very similar to the update view but the fields are not pre-populated and are waiting to be filled in with data to create a new record in the database.
+
 __Admin User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214710673-dcefb0b1-f423-445d-8291-191589c98cbb.png)
+![image](https://user-images.githubusercontent.com/102811792/214710711-ff30b068-0469-46da-9ae8-ea4a8bd789c5.png)
+![image](https://user-images.githubusercontent.com/102811792/214710762-ee8c587e-077d-4ce5-8d2e-786eba9dfac8.png)
 
 ### Create Post
 
+Create post view uses the same form as update record except the fields are blank waiting for new data to be entered into the database.
+
 __Admin User__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214710846-30f80f91-adb8-4e6d-a35b-be7418772586.png)
+![image](https://user-images.githubusercontent.com/102811792/214710877-2d0c0be7-ef86-46a5-8c63-c452adc8ef53.png)
 
 ### Custom 404 Page
 
+My custom 404 page which shows when an incorrect URL is entered. This has a button to return the user to the home page.
+
+__All Users__
 
 - Desktop
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/102811792/214711578-1da40bae-f3a4-457d-af82-e2cc734a2bac.png)
 
 ### Custom 403 Page
 
+My custom 403 page which shows when a user without permission tries to access something only an admin can. This has a button to return the user to the home page.
+
+__All Users__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214715965-08491057-ddf6-4767-9f68-4fd20e83e557.png)
 
 ### Custom 500 Page
+
+My custom 500 page which shows when a server error has occured. This has a button to return the user to the home page.
+
+__All Users__
+
+- Desktop
+![image](https://user-images.githubusercontent.com/102811792/214716045-29cc49e3-5893-4470-b1cc-6efe70413448.png)
+
+## Future Features
+
+I would like to add full CRUD functionality to the comments model to allow users to delete and edit their comments on each post. I would also like to allow the admin user to be able to toggle comments awaiting approval and approve them directly from the page. Another feature I would like to add is a profile page users can customize various parts of their account.
+
+# Testing
+
+## Manual Tetsing 
+
+All manual testing has been done in a Google Sheet found here:
+
+https://docs.google.com/spreadsheets/d/19L0qwkOOp45HYHdCvJuMC4G8VYrlFVN3yKtp6tiavgI/edit?usp=sharing
+
+## Video Tests
+
+IF TIME UPLOAD MP4 of tests
+
+## Compatibility and Responsive Testing
+
+TO DO
+
+EXAMPLE:
+| TOOL / Device                 | BROWSER     | OS         | SCREEN WIDTH  |
+|-------------------------------|-------------|------------|---------------|
+| real phone: motog6            | chrome 78   | android 8  | XS 360 x 640  |
+| browser stack: iPhone5s       | safari  13  | iOs        | XS 320 x 568  |
+| dev tools emulator: pixel 2   | firefox  69 | android 8  | SM 411 x 731  |
+| browserstack: iPhone 10x      | Chrome 78   | iOs 11     | SM 375 x 812  |
+| browserstack: nexus 7 - vert  | Chrome 78   | android 7  | M 600 x 960   |
+| real tablet: ipad mini - vert | safari  13  | iOs 6      | M 768 x 1024  |
+| browserstack: nexus 7 - horiz | firefox 69  | android 7  | LG 960 x 600  |
+| chrome emulator: ipad - horiz | safari 13   | iOs        | LG 1024 x 768 |
+| browserstack windows PC       | Chrome 78   | windows 10 | XL 1920 x 946 |
+| real computer: mac book pro   | safari 12.1 | Mohave     | XL 1400 x 766 |
+| browserstack windows pc       | IE Edge 88  | windows 10 | XL 1920 x 964 |
+
+## Accessibility Testing
+
+### Accessibility Audits
+
+TO DO
+
+LIGHTHOUSE SCREENSHOTS FOR EACH PAGE
+
+## Validation Testing
+
+### CSS Validation
+
+TO DO - RUN MULTIPLE TIMES - INSTANT FAIL
+
+### HTML Validation
+
+TO DO - RUN MULTIPLE TIMES - INSTANT FAIL
+
+### Python Validation
+
+TO DO - RUN MULTIPLE TIMES - INSTANT FAIL
+
+## Defects
+
+TO DO - GITHUB ISSUES 3 or 4
+
+## Outstanding Defects
+
+TO DO
+
+# Deployment
+
+## Development Deployment
+
+TO DO - GITPOD DEPLOY INC ENV.PY FILE
+
+## Production Deployment
+
+TO DO - HEROKU DEPLOY
+
+# Credits
+
+## Content
+
+TO DO - SITES COPIED TEXT FROM
+
+## Media
+
+TO DO - IMAGES USED
+
+## Acknowledgments
+
+TO DO - CODE EXAMPLES / MENTOR / CODE INSTITUTE STARTING POINT
 
 
 
