@@ -11,10 +11,8 @@
             <p class="q-400 fs-30 my-5 del-p">Are you sure you want to delete <strong>{{ post.title }}</strong> by
                 <strong>{{ post.author }}</strong> ?</p>
             <button aria-label="Confirmation to delete the post" type="submit"
-                class="mx-2 px-5 btn btn-outline-success my-2 del-btn del-btn-y">YES</button>
-            <button aria-label="Return to home" type="button"
-                class="mx-2 px-5 btn btn-outline-danger my-2 del-btn del-btn-n"><a class=""
-                    href="{% url 'home' %}">NO</a></button>
+                class="mx-2 px-5 btn btn-outline-success my-2 del-btn">YES</button>
+            <a aria-label="Return to home" type="button" class="mx-2 px-5 btn btn-outline-danger my-2 del-btn" href="{% url 'home' %}">NO</a>
         </div>
     </form>
 

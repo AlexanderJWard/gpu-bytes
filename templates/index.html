@@ -58,19 +58,13 @@
                             <p class="card-text">{{ post.created_on}}</p>
                             <!-- Display number of likes -->
                             <p class="card-text"><i class="fa-solid fa-fire-flame-curved mx-1 red-tx"></i><strong> {{ post.number_of_likes }}</strong></p>
-                            <!-- If user is logged in as a superuser show EDIT and DELETE buttons -->
+                            <!-- If user is logged in as a superuser show EDIT and DELETE links -->
                             {% if user.is_superuser %}
                             <div class="mt-2 d-flex crud-btns">
-                                <!-- Edit button opens a form with existing post data to edit -->
-                                <button aria-label="Edit this post" type="button"
-                                    class="btn btn-outline-success edit-btn"><a class="card-link"
-                                        href="{% url 'update_post' post.slug %}"><i
-                                            class="mr-2 fa-solid fa-pencil"></i>EDIT</a></button>
-                                <!-- Delete button opens a confirmation page for deletion -->
-                                <button aria-label="Delete this post" type="button"
-                                    class="btn btn-outline-danger edit-btn"><a class="card-link"
-                                        href="{% url 'delete_post' post.slug %}"><i
-                                            class="mr-2 fa-solid fa-trash-can"></i>DELETE</a></button>
+                                <!-- Edit link opens a form with existing post data to edit -->
+                                <a aria-label="Edit this post" class="btn btn-outline-success edit-btn" href="{% url 'update_post' post.slug %}"><i class="mr-2 fa-solid fa-pencil"></i>EDIT</a>
+                                <!-- Delete link opens a confirmation page for deletion -->
+                                <a aria-label="Delete this post" class="btn btn-outline-danger edit-btn" href="{% url 'delete_post' post.slug %}"><i class="mr-2 fa-solid fa-trash-can"></i>DELETE</a>
                             </div>
                             {% endif %}
                         </div>
@@ -81,7 +75,7 @@
             </div>
             <div class="row card-border mt-3">
                 {% endif %}
-                <!-- ADD post button appears after the last post if user is a superuser -->
+                <!-- ADD post link appears after the last post if user is a superuser -->
                 {% if forloop.last %}
                 {% if user.is_superuser %}
                 <div class="col-12 col-md-4 px-0 card-parent d-flex align-items-center justify-content-center">
@@ -89,9 +83,7 @@
                         <div class="card-body d-flex flex-column align-items-center">
                             <p class="add-post">Add a Post</p>
                             <!-- Link opens an empty form to create a new post -->
-                            <button aria-label="Add a post" type="button" class="btn btn-outline-success add-btn"><a
-                                    class="" href="{% url 'add_post' %}"><i class="fa-solid fa-plus"></i><span
-                                        class="sr-only">Add a post</span></a></button>
+                            <a aria-label="Add a post" class="btn btn-outline-success add-btn d-flex justify-content-center align-items-center" href="{% url 'add_post' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a post</span></a>
                         </div>
                     </div>
                 </div>
@@ -103,9 +95,7 @@
                 <div class="col-12 d-flex align-items-center justify-content-center flex-column">
                     <p class="empty-post my-5">No Posts Found. Add a Post.</p>
                     <!-- Show the add post link -->
-                    <button aria-label="Add a post" type="button" class="btn btn-outline-success add-btn"><a class=""
-                            href="{% url 'add_post' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a
-                                post</span></a></button>
+                    <a aria-label="Add a post" class="btn btn-outline-success add-btn d-flex justify-content-center align-items-center" href="{% url 'add_post' %}"><i class="fa-solid fa-plus"></i><span class="sr-only">Add a post</span></a>
                 </div>
                 <!-- If anything other than superadmin display No Posts Found -->
                 {% else %}
@@ -117,7 +107,7 @@
             </div>
         </div>
     </div>
-    <!-- If page is paginated display the relevant next and previous buttons -->
+    <!-- If page is paginated display the relevant next and previous links -->
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center mt-3 fan-spin">

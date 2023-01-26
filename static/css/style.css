@@ -235,14 +235,14 @@ footer p {
     background-color: #bd0000;
 }
 
-.filter-btn a,
-.edit-btn a,
-.add-btn a,
-.del-btn a,
-.error-btn a,
-.signout-btn a,
-.empty-btn a,
-.form-btn a {
+.filter-btn,
+.edit-btn,
+.add-btn,
+.del-btn,
+.error-btn,
+.signout-btn,
+.empty-btn,
+.form-btn {
     text-decoration: none;
     color: #000;
     font-family: 'Quicksand', sans-serif;
@@ -253,15 +253,15 @@ footer p {
     color: #000;
 }
 
-.filter-btn:hover a,
-.edit-btn:hover a,
+.filter-btn:hover,
+.edit-btn:hover,
 .edit-btn:hover i,
-.add-btn:hover a,
-.del-btn:hover a,
-.error-btn:hover a,
-.signout-btn:hover a,
-.empty-btn:hover a,
-.form-btn:hover a {
+.add-btn:hover,
+.del-btn:hover,
+.error-btn:hover,
+.signout-btn:hover,
+.empty-btn:hover,
+.form-btn:hover {
     color: #fafaff;
 }
 
@@ -284,10 +284,11 @@ footer p {
     margin-bottom: 3rem;
 }
 
-.error-btn a {
+.error-btn {
     font-size: 20px;
 }
 
+.del-parent a,
 .del-parent button {
     font-size: 40px;
     font-family: 'Quicksand', sans-serif;
@@ -299,13 +300,10 @@ footer p {
     font-family: 'Quicksand', sans-serif;
 }
 
-.add-btn a {
-    font-size: 30px;
-}
-
 .add-btn {
+    font-size: 30px;
     border-radius: 50%;
-    border: 2px solid;
+    border: 2px solid #76b900;
     width: 5rem;
     height: 5rem;
 }
@@ -330,7 +328,7 @@ footer p {
     color: #000;
 }
 
-.crud-btns button {
+.crud-btns a {
     margin: 0 .4rem 0 .4rem;
 }
 
@@ -401,7 +399,8 @@ footer p {
     display: block;
 }
 
-.account-text button {
+.account-text button,
+.account-text a {
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -440,7 +439,7 @@ footer p {
         flex-direction: column;
     }
 
-    .crud-btns button {
+    .crud-btns a {
         margin: .4rem 0 .4rem 0;
     }
 
@@ -468,7 +467,7 @@ footer p {
         flex-direction: row;
     }
 
-    .crud-btns button {
+    .crud-btns a {
         margin: 0 .4rem 0 .4rem;
     }
 
