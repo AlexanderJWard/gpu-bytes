@@ -34,17 +34,13 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left top">
             <div class="card-body p-0">
-                <p class="card-text">
-                    <!-- Post content -->
-                    {{ post.content | linebreaks | safe }}
-                </p>
+                <p class="card-text">{{ post.content | linebreaks | safe }}</p>
                 <!-- Only displayed if sourced_from is not empty -->
                 {% if post.sourced_from %}
                 <p class="post-link card-text">Image sourced from <a href="{{ post.sourced_from }}" target="_blank">{{ post.sourced_from }}</a></p>
                 {% endif %}
                 <div class="row">
                     <div class="col-12 mt-3">
-                        <strong>
                             <!-- If user is logged in show the like button as a form -->
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
@@ -63,7 +59,6 @@
                             {% endif %}
                             <!-- Display total number of likes for the post -->
                         <span class="text-secondary pl-2">{{ post.number_of_likes }} </span>
-                        </strong>
                     </div>
                 </div>
             </div>
