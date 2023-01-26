@@ -575,7 +575,70 @@ IF TIME UPLOAD MP4 of tests
 
 ### Accessibility Audits
 
-TO DO - LIGHTHOUSE SCREENSHOTS FOR EACH PAGE
+- Login
+
+![image](https://user-images.githubusercontent.com/102811792/214954399-0307cb64-7c9c-4c29-913c-144ffef35e61.png)
+
+- Register
+
+![image](https://user-images.githubusercontent.com/102811792/214954526-5582c9d9-a686-4515-88f2-62d1d72f43c4.png)
+
+- Logout
+
+![image](https://user-images.githubusercontent.com/102811792/214954759-84c7848f-91bb-4ef7-8349-ec2a3d65c124.png)
+
+- Post List
+
+![image](https://user-images.githubusercontent.com/102811792/214954922-b6969da8-5f0e-4b18-b55f-90bbb927df2d.png)
+
+- GPU List
+
+![image](https://user-images.githubusercontent.com/102811792/214955044-01e1c5e1-82bb-4725-b522-f20876e65622.png)
+
+- Post Detail
+
+
+- GPU Detail
+
+
+
+- Update Form
+
+
+
+- Edit GPU
+
+
+
+- Edit Post
+
+
+
+- Delete GPU
+
+
+
+- Delete Post
+
+
+
+- Add GPU
+
+
+
+- Add Post
+
+
+
+- 403 Page
+
+
+
+- 404 Page
+
+
+
+- 500 Page
 
 ## Validation Testing
 
