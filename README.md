@@ -624,6 +624,45 @@ Located in the Static/CSS folder and validated by https://jigsaw.w3.org/css-vali
 
 ![image](https://user-images.githubusercontent.com/102811792/214908771-0fe2cd7c-79c2-48e5-8258-11409fa965e6.png)
 
+- Update Form
+
+![image](https://user-images.githubusercontent.com/102811792/214910472-9d50ff64-0071-41fe-bf5b-e61b018dd534.png)
+
+- Edit GPU
+
+![image](https://user-images.githubusercontent.com/102811792/214910563-4795990c-db90-437f-b2b8-2d661e698b4f.png)
+
+- Edit Post
+
+![image](https://user-images.githubusercontent.com/102811792/214910660-cdbbc2d2-ddb6-4ebe-a698-94e163d0371e.png)
+
+- Delete GPU
+
+![image](https://user-images.githubusercontent.com/102811792/214910959-e55fc4df-281a-472b-81a7-0113f23d96a7.png)
+
+- Delete Post
+
+![image](https://user-images.githubusercontent.com/102811792/214911787-9342c9d9-df31-45f6-8348-f84747731e4b.png)
+
+- Add GPU
+
+![image](https://user-images.githubusercontent.com/102811792/214912093-5a78b70d-9951-4aee-b6e5-55977fe7953c.png)
+
+- Add Post
+
+![image](https://user-images.githubusercontent.com/102811792/214912226-6b097889-f853-473c-81ea-ee9e934a1b4f.png)
+
+- 403 Page
+
+![image](https://user-images.githubusercontent.com/102811792/214912737-18df32d3-77ef-407d-871c-7e85c7a082fb.png)
+
+- 404 Page
+
+![image](https://user-images.githubusercontent.com/102811792/214912825-9c262c4e-5bbc-4cb1-8e9c-6e2bd9062c55.png)
+
+- 500 Page
+
+![image](https://user-images.githubusercontent.com/102811792/214912949-7b201def-d997-427c-aa86-c00feb20abb5.png)
 
 ### Python Validation
 
