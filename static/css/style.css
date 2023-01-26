@@ -373,6 +373,16 @@ footer p {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* update form */
+
+.edit-form a {
+    color: #000;
+}
+
+.edit-form a:hover {
+    color: #bd0000;
+}
+
 /* account templates */
 
 .account-image {
