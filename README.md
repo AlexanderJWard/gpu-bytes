@@ -345,7 +345,7 @@ __Admin User__
 
 - Admin Drop Down  View
 
-The admin user can see an **Admin** option in the drop down which shows all GPUs including drafts which regular user cannot view.
+The admin user can see an **Admin** option in the drop down which shows all GPUs including drafts which regular users cannot view.
 
 ![image](https://user-images.githubusercontent.com/102811792/214700574-d8fbdce7-4f28-4068-8624-3395acf3999d.png)
 ![image](https://user-images.githubusercontent.com/102811792/214700755-8992b7df-b902-4b83-9eac-d5c2697abd6b.png)
@@ -547,7 +547,7 @@ I would like to add full CRUD functionality to the comments model to allow users
 
 # Testing
 
-## Manual Tetsing 
+## Manual Testing 
 
 All manual testing has been done in a Google Sheet found here:
 
