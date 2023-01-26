@@ -171,6 +171,7 @@ footer p {
 
 .card-img-overlay {
     opacity: 0.5;
+    padding: 0;
 }
 
 .card-brand {

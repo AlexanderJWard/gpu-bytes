@@ -33,7 +33,7 @@
                 <div class="col-12 col-md-3 card-parent">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container gpu-list">
+                            <div class="card image-container gpu-list">
                                 <!-- If an image isn't uploaded this placeholder image is used. -->
                                 <!-- The image links open the GPU when clicked -->
                                 {% if "placeholder" in post.image.url %}
@@ -43,8 +43,8 @@
                                         alt="Placeholder image of a GPU"></a>
                                 {% else %}
                                 <!-- If an image is uploaded then this is used instead of a placeholder -->
-                                <a href="{% url 'gpu_detail' post.slug %}"><img class="card-img-top"
-                                        src=" {{ post.image.url }}" alt="Featured image uploaded by author"></a>
+                                <a href="{% url 'gpu_detail' post.slug %}">
+                                    <img class="card-img-top" src=" {{ post.image.url }}" alt="Featured image uploaded by author"></a>
                                 {% endif %}
                                 <!-- If the post is a draft then this image is overlaid -->
                                 {% if post.status == 0 %}
