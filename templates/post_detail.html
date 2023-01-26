@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col card mb-4  mt-3 left top">
             <div class="card-body p-0">
-                <p class="card-text">{{ post.content | linebreaks | safe }}</p>
+                <div class="card-text">{{ post.content | linebreaks | safe }}</div>
                 <!-- Only displayed if sourced_from is not empty -->
                 {% if post.sourced_from %}
                 <p class="post-link card-text">Image sourced from <a href="{{ post.sourced_from }}" target="_blank">{{ post.sourced_from }}</a></p>
