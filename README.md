@@ -701,6 +701,10 @@ The following issue is a small visual bug where all posts are not equal height, 
 
 This issue can be found here: https://github.com/AlexanderJWard/gpu-bytes/issues/27
 
+Another issue is the drafts are only clickable on the image instead of image, title, and text.
+
+This can be found here: https://github.com/AlexanderJWard/gpu-bytes/issues/28
+
 # Deployment
 
 ## Development Deployment
