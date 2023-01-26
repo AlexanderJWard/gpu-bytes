@@ -17,11 +17,11 @@
                 <!-- If an image isn't uploaded this placeholder image is used. -->
                 {% if "placeholder" in gpu.image.url %}
                 <!-- Photo by Sergei Starostin: https://www.pexels.com/photo/graphics-card-in-close-up-photography-6704945/ -->
-                <img class="card-img-top" alt="A comptuer graphics processing chip."
-                    src="{% static 'media/Placeholder.webp' %}" />
+                <img class="card-img-top" alt="A comptuer GPU."
+                    src="{% static 'media/Placeholder.webp' %}">
                 {% else %}
                 <!-- If an image is uploaded then this is used instead of a placeholder -->
-                <img class="card-img-top" alt="A picture of the {{gpu.name}} chip." src=" {{ gpu.image.url }}" />
+                <img class="card-img-top" alt="A picture of the {{gpu.name}} GPU." src=" {{ gpu.image.url }}">
                 {% endif %}
             </div>
             <p class="post-subtitle pl-3 pt-3">
@@ -30,7 +30,7 @@
                 <!-- If statements for all GPU fields so if left blank the titles are hidden -->
                 {% if gpu.content %}
                 <p class="gpu-title">GPU Information:</p>
-                <p class="gpu-text">{{ gpu.content | linebreaks | safe }}</p>
+                <div class="gpu-text">{{ gpu.content | linebreaks | safe }}</div>
                 {% endif %}
                 {% if gpu.memory_size %}
                 <p class="gpu-title">Memory Size:</p>
