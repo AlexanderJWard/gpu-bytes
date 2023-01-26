@@ -559,22 +559,17 @@ IF TIME UPLOAD MP4 of tests
 
 ## Compatibility and Responsive Testing
 
-TO DO
-
-EXAMPLE:
-| TOOL / Device                 | BROWSER     | OS         | SCREEN WIDTH  |
-|-------------------------------|-------------|------------|---------------|
-| real phone: motog6            | chrome 78   | android 8  | XS 360 x 640  |
-| browser stack: iPhone5s       | safari  13  | iOs        | XS 320 x 568  |
-| dev tools emulator: pixel 2   | firefox  69 | android 8  | SM 411 x 731  |
-| browserstack: iPhone 10x      | Chrome 78   | iOs 11     | SM 375 x 812  |
-| browserstack: nexus 7 - vert  | Chrome 78   | android 7  | M 600 x 960   |
-| real tablet: ipad mini - vert | safari  13  | iOs 6      | M 768 x 1024  |
-| browserstack: nexus 7 - horiz | firefox 69  | android 7  | LG 960 x 600  |
-| chrome emulator: ipad - horiz | safari 13   | iOs        | LG 1024 x 768 |
-| browserstack windows PC       | Chrome 78   | windows 10 | XL 1920 x 946 |
-| real computer: mac book pro   | safari 12.1 | Mohave     | XL 1400 x 766 |
-| browserstack windows pc       | IE Edge 88  | windows 10 | XL 1920 x 964 |
+| Device                              | Browser        | OS                    | Viewpoint   |
+|-------------------------------------|----------------|-----------------------|-------------|
+| Real laptop: Dynabook Satellite Pro | Microsoft Edge | Windows 11            | 1536 x 864  |
+| Real phone: One Plus 7 Pro          | Google Chrome  | Android v11 Oxygen OS | 385 x 833   |
+| Real laptop: HP 250 G7              | Google Chrome  | Windows 10            | 1306 x 864  |
+| Emulation: iPhone SE                | Microsoft Edge | Windows 11            | 375 x 667   |
+| Emulation: iPad Air                 | Microsoft Edge | Windows 11            | 1180 x 820  |
+| Real desktop: Custom build          | Firefox        | Windows 10            | 2560 x 1440 |
+| Real laptop: Microsoft Surface      | Google Chrome  | Windows 11            | 1280 x 720  |
+| Emulation: iPad Mini                | Microsoft Edge | Windows 11            | 768 x 1024  |
+| Real tablet: iPad (9th Gen)         | Safari         | IOS 15.5              | 1024 x 1366 |
 
 ## Accessibility Testing
 
@@ -666,7 +661,37 @@ Located in the Static/CSS folder and validated by https://jigsaw.w3.org/css-vali
 
 ### Python Validation
 
-TO DO - RUN MULTIPLE TIMES - INSTANT FAIL
+- Manage.py
+
+![image](https://user-images.githubusercontent.com/102811792/214919019-4f7c9b66-61e5-4b08-bfd0-203a31cc34ed.png)
+
+- Settings.py
+
+![image](https://user-images.githubusercontent.com/102811792/214919731-81c88fe5-ef60-4c1f-8c63-28b7401a7d5b.png)
+
+- Gpubytes Urls.py
+
+![image](https://user-images.githubusercontent.com/102811792/214919958-17901762-4333-48d7-9e9f-59e4ce3977fb.png)
+
+- Blog Urls.py
+
+![image](https://user-images.githubusercontent.com/102811792/214920353-6b05fd46-d9ab-4c89-bc25-c030da47c127.png)
+
+- Models.py
+
+![image](https://user-images.githubusercontent.com/102811792/214920977-8049792c-b5c1-4e93-8b72-854e78aa9fdf.png)
+
+- Forms.py
+
+![image](https://user-images.githubusercontent.com/102811792/214921594-33da21b6-702e-4656-91ce-a47d77c25dfa.png)
+
+- Admin.py
+
+![image](https://user-images.githubusercontent.com/102811792/214921952-06930741-9194-4190-98bf-7c5f9c8efdc1.png)
+
+- Views.py
+
+![image](https://user-images.githubusercontent.com/102811792/214923130-caac217c-5925-400b-aea7-06ff6d6487df.png)
 
 ## Defects
 
@@ -699,6 +724,3 @@ TO DO - IMAGES USED
 ## Acknowledgments
 
 TO DO - CODE EXAMPLES / MENTOR / CODE INSTITUTE STARTING POINT
-
-
-
