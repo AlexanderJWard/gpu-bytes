@@ -1,4 +1,5 @@
 # GPU Bytes
+
 ![image](https://user-images.githubusercontent.com/102811792/214440879-cb484a11-70a4-447c-bc18-5f2e4ea63570.png)
 
 ## Author
@@ -77,27 +78,34 @@ I made custom changes to some of the bootstrap classes in my __style.css__ file 
 ### Wireframes
 
 #### Basic View - Not logged in
+
 ![image](https://user-images.githubusercontent.com/102811792/214549349-610f6538-cad0-4d02-899f-f5365085a029.png)
 
 #### Mobile View - Mix of not logged in and as admin
+
 ![image](https://user-images.githubusercontent.com/102811792/214546987-239a6a2a-3ab2-43e2-a03b-f488aa0e3b1c.png)
 
 #### Tablet View as admin (C.R.U.D)
+
 ![image](https://user-images.githubusercontent.com/102811792/214550675-51afe36d-5986-43ea-8425-8517d19b0e60.png)
 
 #### GPU List View as admin (C.R.U.D)
+
 ![image](https://user-images.githubusercontent.com/102811792/214547133-488e6098-ce5e-4326-bac7-64a7f53438e3.png)
 
 #### GPU detail - general user logged in
+
 ![image](https://user-images.githubusercontent.com/102811792/214547245-3148d585-9ef4-416b-a339-eebcf97ec08b.png)
 
 #### Blog detail - general user logged in
 ![image](https://user-images.githubusercontent.com/102811792/214547291-40afd0af-c44d-4455-b6f9-aa22d66110df.png)
 
 #### Confirm delete as admin
+
 ![image](https://user-images.githubusercontent.com/102811792/214547398-e4432522-cd90-49ed-a0fc-8fa35d34c65f.png)
 
 #### Edit & Create Form as admin
+
 ![image](https://user-images.githubusercontent.com/102811792/214547480-5a811a64-1248-4b6a-bbf6-708b36eaa347.png)
 
 - Admin users can see the Admin navigation button to take them to the Django admin console. They can also see an admin section of the dropdown menu in the GPU list view which displays all GPUs including drafts.
@@ -233,6 +241,7 @@ GitHub Project: __https://github.com/users/AlexanderJWard/projects/3__
 ### User Story Example
 
 Here is my User Story template in GitHub:
+
 ![image](https://user-images.githubusercontent.com/102811792/214451470-9b573ce0-76c7-41ad-987c-968ee5a3c9d5.png)
 
 # Features
@@ -246,30 +255,39 @@ The header has different navigation buttons based on what type of user is logged
 __Unauthenticated User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214690331-ad11c4d8-51e7-40fc-bedb-75914f265d62.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214692747-1ac760ff-ecb2-4c31-bf20-edc02143b8ac.png)
 
 __General Authenticated User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214690957-1a88a48c-c554-45f8-b344-cfed0ecfa6f8.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214692874-473560ca-92cd-4fbc-964d-b0e1899a9b0d.png)
 
 __Admin User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214690077-8c812ce2-6849-470f-8ccd-2e4be5d0d701.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214692962-a87acefc-d9da-41ae-ad5a-e34209722d41.png)
 
 ### Footer
 
 __All Users__
+
+- Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214691058-4b1ff706-a2d1-4e06-a287-54be16e669b1.png)
 
 Footer taken from I think therefore I blog CI example blog
@@ -281,9 +299,11 @@ The default home page of the blog containing all the tech posts created by admin
 __General Authenticated User & Unauthenticated User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214691425-af1cf975-d9e3-43b8-9fea-2ad8e9ded376.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214694103-26608c90-34d8-430e-b8a9-040a436c0675.png)
 
 __Admin User__
@@ -296,12 +316,15 @@ As an admin user you can open the drop down menu and select **View All** which c
 ![image](https://user-images.githubusercontent.com/102811792/214697118-bb75095c-fce3-45a8-ae6d-6793e577aed4.png)
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214691252-60363a78-a188-4ce8-9197-86f2ca505a26.png)
 
 - Tablet
+
 ![image](https://user-images.githubusercontent.com/102811792/214695834-66dd0720-5fa2-4ebf-b74d-33e7027e13c7.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214696055-47c2be0c-999c-4b56-83c1-1261e9d50744.png)
 
 ### GPU List
@@ -311,9 +334,11 @@ The GPU list shows all the graphics cards added by an admin user, these can be c
 __General Authenticated User & Unauthenticated User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214691749-9fd2ab87-f266-4a14-a0d1-886a1b447c42.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214699377-923a42ab-b437-438e-aea9-db64126f0d6b.png)
 
 __Admin User__
@@ -326,12 +351,15 @@ The admin user can see an **Admin** option in the drop down which shows all GPUs
 ![image](https://user-images.githubusercontent.com/102811792/214700755-8992b7df-b902-4b83-9eac-d5c2697abd6b.png)
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214691637-425de9a4-786d-402f-b3fa-cc8deb1e6abd.png)
 
 - Tablet
+
 ![image](https://user-images.githubusercontent.com/102811792/214700408-71a7476c-d74a-47ed-ac18-c3677887f25d.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214700471-cfeb99c8-a8c7-4fca-95a8-67381bf5a1d0.png)
 
 ### Post Detail
@@ -341,21 +369,25 @@ This is the post detail view when a user clicks on a post that shows the post im
 __Unauthenticated User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214700983-11feec39-bf2c-4f83-b6c3-8ee3384df0a7.png)
 ![image](https://user-images.githubusercontent.com/102811792/214701078-10699a75-d6ce-4c49-8508-79fc4e14f8ef.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214701832-7f001209-f44d-42b7-be3f-53bd1f71cc86.png)
 ![image](https://user-images.githubusercontent.com/102811792/214701908-1ba78d6e-cfc6-4404-91a0-c6a4eb8f8696.png)
 
 __Authenticated Users__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214701291-88e93f50-9ea7-42d5-b749-b139d608fd1a.png)
 ![image](https://user-images.githubusercontent.com/102811792/214701360-0a18e2fc-b884-4803-b2a8-5bae1d95d4e5.png)
 ![image](https://user-images.githubusercontent.com/102811792/214701425-452a36b8-5c04-4055-8c37-a529d537f678.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214701625-3a9c6345-13e5-479e-bd6c-223b618b565a.png)
 ![image](https://user-images.githubusercontent.com/102811792/214701740-673bf3a8-5111-4164-9d2e-d97b5c3369c3.png)
 
@@ -366,10 +398,12 @@ This is the GPU detail view after a user clicks on a GPU that shows all related 
 __All Users__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214703539-be66e364-9d84-472f-a686-39aa4e6c5290.png)
 ![image](https://user-images.githubusercontent.com/102811792/214703593-ccf546ac-d600-4bea-b296-ea2202ef96b2.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214703681-0c750ca0-6182-4aef-b262-e2eb8dfcb18e.png)
 ![image](https://user-images.githubusercontent.com/102811792/214703730-34931771-629a-4ad2-b043-e4d5b96e9742.png)
 
@@ -380,9 +414,11 @@ The login page that shows for all users who are not logged in, it allows them to
 __Unauthenticated User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214703958-270994a1-56ab-4f18-b019-6a9f6274bdfc.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214704020-5daa091b-6d3e-45b7-9e3b-61a4f1d9174a.png)
 ![image](https://user-images.githubusercontent.com/102811792/214704057-d3679995-1ba1-4f39-adb9-d20f9e92d4d0.png)
 
@@ -393,9 +429,11 @@ The logout page shows for all authenticated users and is a confirmation page ask
 __Authenticated Users__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214704970-435e0e37-2389-4b0b-a3d3-582b54af738b.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214705042-756b9825-7af0-4e68-94c7-14259da70228.png)
 
 ### Signup
@@ -405,9 +443,11 @@ The signup page shows for all unauthenticated users, it allows them to register 
 __Unauthenticated User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214705390-3e24544c-154b-4659-b527-a97fd1c519c7.png)
 
 - Mobile
+
 ![image](https://user-images.githubusercontent.com/102811792/214705453-0979fc83-537f-400d-932e-2a9803e01931.png)
 ![image](https://user-images.githubusercontent.com/102811792/214705483-ce5a76d0-1e17-4614-a47f-df152ee59f88.png)
 
@@ -418,10 +458,12 @@ The update record view for editing both post and GPU. This allows an admin to up
 __Admin User__
 
 - Desktop (Post)
+
 ![image](https://user-images.githubusercontent.com/102811792/214706139-b4618331-64aa-46ec-b98f-f925bd26bf67.png)
 ![image](https://user-images.githubusercontent.com/102811792/214706187-bc24dbf4-780d-43f8-97ed-9ec54401df5b.png)
 
 - Desktop (GPU)
+
 ![image](https://user-images.githubusercontent.com/102811792/214706312-e2250869-6b6f-47dc-8de7-4ce2e93402cd.png)
 ![image](https://user-images.githubusercontent.com/102811792/214706389-95afcd5c-dd50-4e85-97c8-7db1a2fbce2e.png)
 ![image](https://user-images.githubusercontent.com/102811792/214706446-0d92174f-a994-4886-97bc-8462a67a5317.png)
@@ -433,6 +475,7 @@ The delete gpu view is a confirmation page to ensure the admin is positive they 
 __Admin User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214708250-5f6f3f6b-ec02-4c16-8d7b-65eb9653ddb5.png)
 
 ### Delete Post
@@ -442,6 +485,7 @@ The delete post view is a confirmation page to ensure the admin is positive they
 __Admin User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214707271-976b390a-41d7-4f30-b3b1-fdf76e0ab86e.png)
 
 ### Create GPU
@@ -451,6 +495,7 @@ Create gpu view is very similar to the update view but the fields are not pre-po
 __Admin User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214710673-dcefb0b1-f423-445d-8291-191589c98cbb.png)
 ![image](https://user-images.githubusercontent.com/102811792/214710711-ff30b068-0469-46da-9ae8-ea4a8bd789c5.png)
 ![image](https://user-images.githubusercontent.com/102811792/214710762-ee8c587e-077d-4ce5-8d2e-786eba9dfac8.png)
@@ -462,6 +507,7 @@ Create post view uses the same form as update record except the fields are blank
 __Admin User__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214710846-30f80f91-adb8-4e6d-a35b-be7418772586.png)
 ![image](https://user-images.githubusercontent.com/102811792/214710877-2d0c0be7-ef86-46a5-8c63-c452adc8ef53.png)
 
@@ -472,6 +518,7 @@ My custom 404 page which shows when an incorrect URL is entered. This has a butt
 __All Users__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214711578-1da40bae-f3a4-457d-af82-e2cc734a2bac.png)
 
 ### Custom 403 Page
@@ -481,6 +528,7 @@ My custom 403 page which shows when a user without permission tries to access so
 __All Users__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214715965-08491057-ddf6-4767-9f68-4fd20e83e557.png)
 
 ### Custom 500 Page
@@ -490,6 +538,7 @@ My custom 500 page which shows when a server error has occured. This has a butto
 __All Users__
 
 - Desktop
+
 ![image](https://user-images.githubusercontent.com/102811792/214716045-29cc49e3-5893-4470-b1cc-6efe70413448.png)
 
 ## Future Features
