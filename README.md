@@ -575,9 +575,7 @@ IF TIME UPLOAD MP4 of tests
 
 ### Accessibility Audits
 
-TO DO
-
-LIGHTHOUSE SCREENSHOTS FOR EACH PAGE
+TO DO - LIGHTHOUSE SCREENSHOTS FOR EACH PAGE
 
 ## Validation Testing
 
@@ -699,7 +697,9 @@ Issues are tracked on GitHUb at the following link: https://github.com/Alexander
 
 ## Outstanding Defects
 
-TO DO
+The following issue is a small visual bug where all posts are not equal height, ideally all posts should be the same height being responsive based on the post with the greatest height.
+
+This issue can be found here: https://github.com/AlexanderJWard/gpu-bytes/issues/27
 
 # Deployment
 
@@ -719,7 +719,20 @@ TO DO - SITES COPIED TEXT FROM
 
 ## Media
 
-TO DO - IMAGES USED
+- Placeholder image taken from  Pexels. Photo by Sergei Starostin: https://www.pexels.com/photo/graphics-card-in-close-up-photography-6704945/
+
+- Fan Vectors by Iyi Kon on Vecteezy.com. https://www.vecteezy.com/vector-art/351514-charging-fan-vector-icon
+
+### Post Images
+
+- https://www.pexels.com/photo/internet-technology-computer-business-4581816/
+
+- https://www.pexels.com/photo/a-person-holding-a-smartphone-9242887/
+
+### GPU Images
+
+- 
+
 
 ## Acknowledgments
 
