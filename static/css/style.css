@@ -388,6 +388,15 @@ footer p {
     font-weight: bold;
 }
 
+.account-text a {
+    color: #000;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.account-text a:hover {
+    color: #bd0000;
+}
+
 .account-text p {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
@@ -399,8 +408,7 @@ footer p {
     display: block;
 }
 
-.account-text button,
-.account-text a {
+.account-text button {
     font-family: 'Quicksand', sans-serif;
 }
 
