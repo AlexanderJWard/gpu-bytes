@@ -41,7 +41,6 @@ GPU Bytes is a purely educational website blog. It's aimed at computer enthusias
   - [Future Features](#future-features)
 - [Testing](#testing)
   - [Manual Testing](#manual-testing)
-  - [Video Tests](#video-tests)
   - [Compatibility and Responsive Testing](#compatibility-and-responsive-testing)
   - [Accessibility Testing](#accessibility-testing)
   - [Validation Testing](#validation-testing)
@@ -612,10 +611,6 @@ I would like to add full CRUD functionality to the comments model to allow users
 All manual testing has been done in a Google Sheet found here:
 
 https://docs.google.com/spreadsheets/d/19L0qwkOOp45HYHdCvJuMC4G8VYrlFVN3yKtp6tiavgI/edit?usp=sharing
-
-## Video Tests
-
-IF TIME UPLOAD MP4 of tests
 
 ## Compatibility and Responsive Testing
 
