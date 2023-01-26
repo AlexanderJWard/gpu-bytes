@@ -695,7 +695,7 @@ Located in the Static/CSS folder and validated by https://jigsaw.w3.org/css-vali
 
 ## Defects
 
-TO DO - GITHUB ISSUES 3 or 4
+Issues are tracked on GitHUb at the following link: https://github.com/AlexanderJWard/gpu-bytes/issues
 
 ## Outstanding Defects
 
