@@ -63,7 +63,19 @@ I used images such as computer fans and graphics cards to match the overall them
 > - icons
 
 ### Animations and Transactions
-TO BE ADDED IF TIME
+
+- Fan image rotation
+
+https://user-images.githubusercontent.com/102811792/214969262-2a2fb354-ac03-41f5-9b34-e155464dd681.mp4
+
+
+- Hover effects on buttons, drop down, and navigation
+
+https://user-images.githubusercontent.com/102811792/214969626-e9805de1-8cbe-4785-ad11-08911526a4a1.mp4
+
+- Pagination next and previous fan animation
+
+https://user-images.githubusercontent.com/102811792/214969843-cf181db7-3be9-4b3c-bb1f-064f769dea90.mp4
 
 ### Frameworks
 
@@ -189,10 +201,6 @@ Model taken from the I think therefore I blog Code Institute example blog, exclu
 |              | Status         | Integer          |
 |              | Sourced From   | URLField         |
 
-## CRUD Diagrams
-
-TO BE ADDED IF TIME
-
 # Agile Process
 
 ## Project Goals
@@ -223,14 +231,6 @@ TO BE ADDED IF TIME
 15. As a **Site Admin** I can **create draft posts** so that **I can finish writing the content later**
 16. As a **Site User** I can **view a paginated list of posts** so that **posts are easily viewed**
 
-## Feasibility vs Importance
-
-TO DO IF TIME
-
-Here is a link to the feasibility diagram in Google Sheets:
-
-https://docs.google.com/spreadsheets/d/1NIrvPL1cu9MP9QTzrYLARy_Gzi-X3ZY_tHXXHWq4XXw/edit?usp=sharing
-
 ## Agile Tool
 
 I created my User Stories on GitHub using the Issue section and a custom template. After the User Stories were created I connected them into a GitHub project KanBan board. Here are the links for both Issues and Project.
@@ -245,6 +245,28 @@ Here is my User Story template in GitHub:
 ![image](https://user-images.githubusercontent.com/102811792/214451470-9b573ce0-76c7-41ad-987c-968ee5a3c9d5.png)
 
 # Features
+
+## Feature MP4 Showcase
+
+### Change GPU Views
+
+- Admin option allows the superuser to see all GPUs together and to see drafts
+
+https://user-images.githubusercontent.com/102811792/214970243-75f717a3-b40b-49c5-8fb5-8b8114a1a93a.mp4
+
+### Change Post View
+
+- View all option allows the superuser to see drafts
+
+https://user-images.githubusercontent.com/102811792/214973836-a14d9693-4f57-4251-9456-28c3a0caa7e6.mp4
+
+### Approve Comments in Django Admin
+
+https://user-images.githubusercontent.com/102811792/214973402-593cc867-be00-497d-b56b-a8b8408d9a00.mp4
+
+### Like / Unlike Post
+
+https://user-images.githubusercontent.com/102811792/214973712-1ff9bee1-0b70-4e45-8314-bdce8a56c9bb.mp4
 
 ## Implemented Features
 
@@ -640,7 +662,7 @@ IF TIME UPLOAD MP4 of tests
 ### CSS Validation
 
 - Style.css
-- 
+
 Located in the Static/CSS folder and validated by https://jigsaw.w3.org/css-validator/#validate_by_input
 
 ![image](https://user-images.githubusercontent.com/102811792/214902689-57d64031-1b8a-4035-9124-ea1e2e5d581c.png)
@@ -833,7 +855,7 @@ COLLECT_STATIC
 
 ## Content
 
-TO DO - SITES COPIED TEXT FROM
+- Footer, Post and Comment model based off Code Institute 'I think therefore I blog' example project.
 
 ## Media
 
@@ -847,11 +869,21 @@ TO DO - SITES COPIED TEXT FROM
 
 - https://www.pexels.com/photo/a-person-holding-a-smartphone-9242887/
 
+- https://www.pexels.com/photo/red-and-black-abstract-painting-1820563/
+
 ### GPU Images
 
-- 
+- https://www.amd.com/en/products/graphics/amd-radeon-rx-7900xtx
+
+- https://www.nvidia.com/en-gb/geforce/graphics-cards/40-series/rtx-4090/
+
+- https://www.nvidia.com/en-gb/geforce/graphics-cards/40-series/rtx-4080/
+
+- https://www.amd.com/en/graphics/amd-radeon-rx-6700-series
 
 
 ## Acknowledgments
 
-TO DO - CODE EXAMPLES / MENTOR / CODE INSTITUTE STARTING POINT
+- Code Institute 'I think therefore I blog' example project
+
+- Mentor helped me with the class based views (CreateView, UpdateView, DeleteView)
