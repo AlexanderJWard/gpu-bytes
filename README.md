@@ -588,11 +588,42 @@ LIGHTHOUSE SCREENSHOTS FOR EACH PAGE
 
 ### CSS Validation
 
-TO DO - RUN MULTIPLE TIMES - INSTANT FAIL
+- Style.css
+- 
+Located in the Static/CSS folder and validated by https://jigsaw.w3.org/css-validator/#validate_by_input
+
+![image](https://user-images.githubusercontent.com/102811792/214902689-57d64031-1b8a-4035-9124-ea1e2e5d581c.png)
 
 ### HTML Validation
 
-TO DO - RUN MULTIPLE TIMES - INSTANT FAIL
+- Login
+
+![image](https://user-images.githubusercontent.com/102811792/214903542-1b4ba651-7da4-4939-82e4-fa8ede2a9a2c.png)
+
+- Register
+
+![image](https://user-images.githubusercontent.com/102811792/214903738-477329b1-83ce-407d-b5e8-bff348074c2a.png)
+
+- Logout
+
+![image](https://user-images.githubusercontent.com/102811792/214904058-aff1d3f8-6488-46fb-beee-604e610d424d.png)
+
+- Post List
+
+![image](https://user-images.githubusercontent.com/102811792/214905221-2b5f4cd0-9b75-4e81-8998-2cb89fa96d98.png)
+
+- GPU List
+
+![image](https://user-images.githubusercontent.com/102811792/214905388-af962029-1e81-4311-b1d0-4e8b7a645db0.png)
+
+- Post Detail
+
+![image](https://user-images.githubusercontent.com/102811792/214907625-814c7c82-a9f3-40bc-b304-40493e70de16.png)
+
+- GPU Detail
+
+![image](https://user-images.githubusercontent.com/102811792/214908771-0fe2cd7c-79c2-48e5-8258-11409fa965e6.png)
+
 
 ### Python Validation
 
