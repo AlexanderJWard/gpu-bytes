@@ -15,7 +15,45 @@ My repository can be found here: https://github.com/AlexanderJWard/gpu-bytes
 GPU Bytes is a purely educational website blog. It's aimed at computer enthusiasts looking to educate themselves and learn about new technologies released. Additionally, they can get information about the latest and greatest Graphical Processing Units (GPUs).
 
 # Table of Contents
-__TO BE ADDED__
+
+# Table of contents
+
+- [GPU Bytes](#gpu-bytes)
+  - [Author](#author)
+  - [Live Site](#live-site)
+  - [Repository](#repository)
+  - [Introduction](#introduction)
+- [Table of Contents](#table-of-contents)
+- [User Experience](#user-experience)
+  - [Target Audience](#target-audience)
+  - [Design Choices](#design-choices)
+- [Information Architecture](#information-architecture)
+  - [Entity Relationship Diagram](#entity-relationship-diagram)
+  - [Database Choice](#database-choice)
+  - [Data Models](#data-models)
+- [Agile Process](#agile-process)
+  - [Project Goals](#project-goals)
+  - [User Stories](#user-stories)
+  - [Agile Tool](#agile-tool)
+- [Features](#features)
+  - [Feature MP4 Showcase](#feature-mp4-showcase)
+  - [Implemented Features](#implemented-features)
+  - [Future Features](#future-features)
+- [Testing](#testing)
+  - [Manual Testing](#manual-testing)
+  - [Video Tests](#video-tests)
+  - [Compatibility and Responsive Testing](#compatibility-and-responsive-testing)
+  - [Accessibility Testing](#accessibility-testing)
+  - [Validation Testing](#validation-testing)
+  - [Defects](#defects)
+  - [Outstanding Defects](#outstanding-defects)
+- [Deployment](#deployment)
+  - [Development Deployment](#development-deployment)
+  - [Production Deployment](#production-deployment)
+- [Credits](#credits)
+  - [Content](#content)
+  - [Media](#media)
+  - [Acknowledgments](#acknowledgments)
 
 # User Experience
 
@@ -780,10 +818,6 @@ Issues are tracked on GitHUb at the following link: https://github.com/Alexander
 The following issue is a small visual bug where all posts are not equal height, ideally all posts should be the same height being responsive based on the post with the greatest height.
 
 This issue can be found here: https://github.com/AlexanderJWard/gpu-bytes/issues/27
-
-Another issue is the drafts are only clickable on the image instead of image, title, and text.
-
-This can be found here: https://github.com/AlexanderJWard/gpu-bytes/issues/28
 
 # Deployment
 
