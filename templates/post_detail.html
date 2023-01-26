@@ -72,12 +72,12 @@
     <!-- Comments section -->
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
-            <!-- If only 1 comment exists display Comment as the h3 -->
+            <!-- If only 1 comment exists display Comment as the h2 -->
             {% if comments.count == 1 %}
-            <h3>{{ comments.count }} Comment:</h3>
+            <h2>{{ comments.count }} Comment:</h2>
             {% else %}
-            <!-- If either 0 or 2+ comments exist display Comments as the h3 -->
-            <h3>{{ comments.count }} Comments:</h3>
+            <!-- If either 0 or 2+ comments exist display Comments as the h2 -->
+            <h2>{{ comments.count }} Comments:</h2>
             {% endif %}
             <div class="card-body">
                 {% for comment in comments %}
