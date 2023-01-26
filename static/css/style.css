@@ -143,14 +143,14 @@ footer p {
     background-color: #fafaff;
 }
 
-#gpu-list .card-img-top {
+.gpu-list .card-img-top {
     width: 100%;
     height: 13vw;
     object-fit: cover;
     object-position: bottom;
 }
 
-#post-list .card-img-top {
+.post-list .card-img-top {
     width: 100%;
     height: 18vw;
     object-fit: cover;
@@ -453,8 +453,8 @@ footer p {
         border-bottom: 1px solid #77777725;
     }
 
-    #gpu-list .card-img-top,
-    #post-list .card-img-top,
+    .gpu-list .card-img-top,
+    .post-list .card-img-top,
     .masthead-image .card-img-top {
         width: 100%;
         height: 50vw;
