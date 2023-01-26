@@ -597,48 +597,43 @@ IF TIME UPLOAD MP4 of tests
 
 - Post Detail
 
+![image](https://user-images.githubusercontent.com/102811792/214958707-8483978e-7e74-4b5c-8729-2449a607842e.png)
 
 - GPU Detail
 
-
+![image](https://user-images.githubusercontent.com/102811792/214958811-a4ed98a9-3884-452a-81f7-09baa5313a9b.png)
 
 - Update Form
 
-
-
-- Edit GPU
-
-
-
-- Edit Post
-
-
+![image](https://user-images.githubusercontent.com/102811792/214958933-6959baac-eaea-4f50-b210-3718fe0a336f.png)
 
 - Delete GPU
 
-
+![image](https://user-images.githubusercontent.com/102811792/214959240-7bb06828-6895-4652-b47d-ac3727adfebe.png)
 
 - Delete Post
 
-
+![image](https://user-images.githubusercontent.com/102811792/214959322-77414e4e-e666-48ed-8cbf-a347375ce76a.png)
 
 - Add GPU
 
-
+![image](https://user-images.githubusercontent.com/102811792/214959423-629e1271-96c4-4671-a736-ad8102659a7d.png)
 
 - Add Post
 
-
+![image](https://user-images.githubusercontent.com/102811792/214959501-2fb46043-8cf1-430e-b20d-ca3378fdcd51.png)
 
 - 403 Page
 
-
+![image](https://user-images.githubusercontent.com/102811792/214959592-253462ca-2c1e-4805-bb64-b4ece5a0baad.png)
 
 - 404 Page
 
-
+![image](https://user-images.githubusercontent.com/102811792/214959676-4c1b748e-86bd-47d1-822b-23ed3e370015.png)
 
 - 500 Page
+
+![image](https://user-images.githubusercontent.com/102811792/214959809-143e94dc-6c25-4a1e-b6e0-360a7e4d0501.png)
 
 ## Validation Testing
 
@@ -772,11 +767,67 @@ This can be found here: https://github.com/AlexanderJWard/gpu-bytes/issues/28
 
 ## Development Deployment
 
-TO DO - GITPOD DEPLOY INC ENV.PY FILE
+1. Add the following browser extension to Google Chrome or Microsoft Edge from here: https://chrome.google.com/webstore/detail/gitpod-always-ready-to-co/dodmmooeoklaejobgleioelladacbeki
+
+![image](https://user-images.githubusercontent.com/102811792/214961898-2d5055f9-521c-485b-a914-3803a209c180.png)
+
+2. Navigate to the GitHub repository located here: https://github.com/AlexanderJWard/gpu-bytes
+
+3. Press the green Gitpod button at the top of the repository.
+
+![image](https://user-images.githubusercontent.com/102811792/214961990-49cbc324-1d71-401a-982f-1684e5d11675.png)
+
+4. If the pip version is out of date run this command: __pip3 install --upgrade pip__
+
+5. Create a new file called env.py in the root directory.
+
+6. Put the following text in the env.py replacing "YOUR VALUE" with relevant values.
+
+import os
+
+os.environ["SECRET_KEY"] = "YOUR_VALUE"
+os.environ["CLOUDINARY_URL"] = "YOUR_VALUE"
+DEV=True
+
+7. Type pip3 install -r requirements.txt to install required python packages
+
+8. Migrate the database with the following command: __python3 manage.py migrate__
+
+8. Create a Django superadmin user by running the following command: __python manage.py createsuperuser__
+
+9. Run the server by typing in the following command: __python3 manage.py runserver__
 
 ## Production Deployment
 
-TO DO - HEROKU DEPLOY
+1. Deploy the site to Heroku. Create an account on Heroku and login.
+
+2. Create a new app, give it a name and choose a region.
+
+![image](https://user-images.githubusercontent.com/102811792/214965318-84e4c192-a99c-450c-af78-265dd329d23f.png)
+
+3. Enter payment information and choose a plan.
+
+4. Navigate to the settings tab
+
+![image](https://user-images.githubusercontent.com/102811792/214965466-dfc99465-3f8c-4c01-8347-75d4d53359d2.png)
+
+5. Reveal config vars and enter the following fields, fill in the values as required.
+
+SECRET_KEY
+CLOUDINARY_URL
+COLLECT_STATIC
+
+![image](https://user-images.githubusercontent.com/102811792/214965865-aa6c9cd7-e324-4d2b-8f39-a7181d22fb68.png)
+
+6. Navigate to the Deploy tab.
+
+![image](https://user-images.githubusercontent.com/102811792/214966238-f24fcb1b-a2cd-4829-959e-b7388c07c377.png)
+
+7. Choose GitHub, login with credentials and choose the repository.
+
+![image](https://user-images.githubusercontent.com/102811792/214966477-23c3cb39-a228-48d1-ab1e-7ebb4b145e08.png)
+
+8. Choose the branch 'main' and click Deploy. Click Enable Automatic Deploys if desired to auto deploy every time the repository is updated.
 
 # Credits
 
