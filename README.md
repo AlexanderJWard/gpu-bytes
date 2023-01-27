@@ -894,6 +894,8 @@ COLLECT_STATIC
 
 - Fan Vectors by Iyi Kon on Vecteezy.com. https://www.vecteezy.com/vector-art/351514-charging-fan-vector-icon
 
+- Account Photo by Dave Morgan: https://www.pexels.com/photo/computer-exhaust-fan-2643596/
+
 ### Post Images
 
 - https://www.pexels.com/photo/internet-technology-computer-business-4581816/
