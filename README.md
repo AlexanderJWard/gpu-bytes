@@ -886,6 +886,8 @@ COLLECT_STATIC
 
 - Footer, Post and Comment model based off Code Institute 'I think therefore I blog' example project.
 
+- GPU content taken from the product page of each card. Links are shown on each GPU detail page under "Sourced From" model field.
+
 ## Media
 
 - Placeholder image taken from  Pexels. Photo by Sergei Starostin: https://www.pexels.com/photo/graphics-card-in-close-up-photography-6704945/
